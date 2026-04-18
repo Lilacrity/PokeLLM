@@ -53,16 +53,13 @@ ADDR_SAVEBLOCK1_PTR = 0x03005008
 ADDR_SAVEBLOCK2_PTR = 0x0300500C
 
 # -----------------------------------------------------------------------------
-# Fixed-address globals (FireRed US v1.0). VERIFY each against mGBA's memory
-# viewer before depending on it. These are community-documented but the safest
-# source is the decomp's sym_iwram.txt / sym_ewram.txt / sym_bss.txt. If you
-# later compile the decomp, grab them from the .map file and update here.
+# Fixed-address globals (FireRed US v1.0). All addresses verified against the
+# compiled decomp's linker map (pret/pokefirered.map).
 # -----------------------------------------------------------------------------
 
 # struct Main gMain -- holds callbacks, key state, and inBattle flag.
-# pret/include/main.h describes the layout; the fixed address is not in the
-# minimal pret subset shipped with this project.
-ADDR_GMAIN = 0x03003000  # TODO: verify in mGBA
+# pret/include/main.h describes the layout.
+ADDR_GMAIN = 0x030030F0  # pokefirered.map: gMain = 0x030030f0
 
 # struct ObjectEvent gObjectEvents[OBJECT_EVENTS_COUNT]
 # 16 * 0x24 = 576 bytes. One bulk read covers the whole array.
@@ -70,23 +67,23 @@ ADDR_GOBJECT_EVENTS = 0x02036E38  # VERIFIED
 
 # struct PlayerAvatar gPlayerAvatar -- flags, running state, gender, etc.
 # Useful for detecting surf/bike and for disambiguating the player slot.
-ADDR_GPLAYER_AVATAR = 0x02036E58  # TODO: verify in mGBA
+ADDR_GPLAYER_AVATAR = 0x02037078  # pokefirered.map: gPlayerAvatar = 0x02037078
 
 # struct MapHeader gMapHeader -- current map header, reloaded on transition.
 # Contains music, mapLayoutId, weather, etc.
-ADDR_GMAP_HEADER = 0x0300500C - 0x4  # placeholder; TODO: verify
+ADDR_GMAP_HEADER = 0x02036DFC  # pokefirered.map: gMapHeader = 0x02036dfc
 
 # gBackupMapData: u16 tile grid buffer (metatile_id | collision | elevation).
 # Row stride is VMap.Xsize == mapLayout->width + MAP_OFFSET_W. To read a
 # *behaviour* you still need the tileset's metatileAttributes table (on ROM),
 # so in practice RamReader.read_tile_behavior pulls the whole machinery from
 # gMapHeader.mapLayout.
-ADDR_GBACKUP_MAP_DATA = 0x02031DFC  # TODO: verify in mGBA
+ADDR_GBACKUP_MAP_DATA = 0x02031DFC  # pokefirered.map: gBackupMapData = 0x02031dfc
 
 # struct BackupMapLayout VMap -- holds Xsize, Ysize, and map pointer. Useful
 # if you want to confirm the grid dimensions live instead of deriving them
 # from MapHeader.
-ADDR_VMAP = 0x03005038  # TODO: verify in mGBA
+ADDR_VMAP = 0x03005040  # pokefirered.map: VMap = 0x03005040
 
 # gPlayerParty -- the *live* player party, 6 * struct Pokemon (100 bytes each).
 # This is what actually changes during play as the team gains XP, takes damage,
@@ -108,15 +105,15 @@ ADDR_GPLAYER_PARTY = 0x02024284
 # pokegym and similar references cite 0x02024284 for "battle pokemon", but
 # that address is actually gPlayerParty (see above). Verify the real
 # gBattleMons slot in mGBA before using it.
-ADDR_GBATTLE_MONS = 0x02023BE4  # TODO: verify in mGBA
+ADDR_GBATTLE_MONS = 0x02023BE4  # pokefirered.map: gBattleMons = 0x02023be4
 BATTLE_POKEMON_SIZE = 0x58
 
 # gBattleTypeFlags: u32 bitmask. Non-zero implies a battle is in progress.
-ADDR_GBATTLE_TYPE_FLAGS = 0x02022FEC  # TODO: verify
+ADDR_GBATTLE_TYPE_FLAGS = 0x02022B4C  # pokefirered.map: gBattleTypeFlags = 0x02022b4c
 
 # gEnemyParty -- the wild/trainer party laid out as 6 * struct Pokemon.
 # Same encrypted-substruct layout as the player party.
-ADDR_GENEMY_PARTY = 0x0202402C  # TODO: verify
+ADDR_GENEMY_PARTY = 0x0202402C  # pokefirered.map: gEnemyParty = 0x0202402c
 
 # -----------------------------------------------------------------------------
 # Offsets into struct SaveBlock1 (pret/include/global.h). All offsets come

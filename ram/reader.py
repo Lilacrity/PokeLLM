@@ -338,12 +338,16 @@ class RamReader:
     def read_game_mode(self) -> C.GameMode:
         """Coarse classification via a handful of RAM tells.
 
-        Order of checks is important: battle is the most unambiguous signal
-        (inBattle bit in gMain + non-zero gBattleTypeFlags), so check it
-        first. Dialogue / menu detection is deliberately left as UNKNOWN
-        until the specific callback addresses for this ROM revision are
-        identified -- better to return UNKNOWN than to guess wrong and
-        mislead the event detector.
+        The sole battle indicator is ``gMain.inBattle`` (offset 0x439
+        bit 1). The engine sets it TRUE on battle entry and FALSE on exit.
+        ``gBattleTypeFlags`` is *not* used here -- it classifies the battle
+        type (wild, trainer, double, …) but is never explicitly zeroed
+        when battle ends, so it would stick as a false positive.
+
+        Dialogue / menu detection is deliberately left as UNKNOWN until the
+        specific callback addresses for this ROM revision are identified --
+        better to return UNKNOWN than to guess wrong and mislead the event
+        detector.
         """
         try:
             flags_byte = self.read_u8(C.ADDR_GMAIN + C.GMAIN_OFFSET_FLAGS_BYTE)
@@ -352,13 +356,6 @@ class RamReader:
 
         if flags_byte & C.GMAIN_FLAG_IN_BATTLE:
             return C.GameMode.BATTLE
-
-        try:
-            battle_flags = self.read_u32(C.ADDR_GBATTLE_TYPE_FLAGS)
-            if battle_flags != 0:
-                return C.GameMode.BATTLE
-        except Exception:
-            pass
 
         # If we successfully read SaveBlock1, assume overworld until we wire
         # up dialogue/menu detection.

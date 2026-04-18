@@ -40,6 +40,14 @@ MAP_OFFSET_H = MAP_OFFSET * 2
 POKEMON_SIZE = 0x64          # sizeof(struct Pokemon)
 BOX_POKEMON_SIZE = 0x50      # sizeof(struct BoxPokemon)
 OBJECT_EVENT_SIZE = 0x24     # sizeof(struct ObjectEvent) -- see global.fieldmap.h
+BATTLE_POKEMON_SIZE = 0x58   # sizeof(struct BattlePokemon) -- see pokemon.h
+MAX_BATTLERS_COUNT = 4       # singles=2, doubles=4
+MAX_MON_MOVES = 4
+
+SPECIES_NAME_LENGTH = 11     # POKEMON_NAME_LENGTH + 1 (null terminated in ROM)
+MOVE_NAME_LENGTH = 13        # MOVE_NAME_LENGTH + 1
+NUM_SPECIES = 412            # constants/species.h: SPECIES_EGG
+MOVES_COUNT = 355            # constants/moves.h
 
 # -----------------------------------------------------------------------------
 # Pointer anchors. These are the fixed IWRAM slots that hold pointers to the
@@ -99,21 +107,40 @@ ADDR_VMAP = 0x03005040  # pokefirered.map: VMap = 0x03005040
 #   0x02024478  Pokemon 6
 ADDR_GPLAYER_PARTY = 0x02024284
 
-# gBattleMons[MAX_BATTLERS_COUNT] (MAX_BATTLERS_COUNT == 4 in FRLG).
-# Each entry is a struct BattlePokemon (0x58 bytes). Only valid while a battle
-# is active -- gate on GameMode first. The address below is a placeholder:
-# pokegym and similar references cite 0x02024284 for "battle pokemon", but
-# that address is actually gPlayerParty (see above). Verify the real
-# gBattleMons slot in mGBA before using it.
-ADDR_GBATTLE_MONS = 0x02023BE4  # pokefirered.map: gBattleMons = 0x02023be4
-BATTLE_POKEMON_SIZE = 0x58
+# -- Battle globals (only valid while gMain.inBattle is set) ----------------
 
-# gBattleTypeFlags: u32 bitmask. Non-zero implies a battle is in progress.
-ADDR_GBATTLE_TYPE_FLAGS = 0x02022B4C  # pokefirered.map: gBattleTypeFlags = 0x02022b4c
+ADDR_GBATTLE_TYPE_FLAGS = 0x02022B4C      # u32; pokefirered.map
+ADDR_GACTIVE_BATTLER = 0x02023BC4         # u8; which battler slot is acting
+ADDR_GBATTLERS_COUNT = 0x02023BCC         # u8; 2 singles, 4 doubles
+ADDR_GBATTLER_PARTY_INDEXES = 0x02023BCE  # u8[4]; battler slot -> party index
+ADDR_GBATTLE_MONS = 0x02023BE4            # struct BattlePokemon[4]; pokefirered.map
+ADDR_GCURRENT_MOVE = 0x02023D4A           # u16; move ID currently executing
+ADDR_GBATTLE_MOVE_DAMAGE = 0x02023D50     # s32; damage from current move
+ADDR_GBATTLER_ATTACKER = 0x02023D6B       # u8; battler slot of attacker
+ADDR_GBATTLER_TARGET = 0x02023D6C         # u8; battler slot of target
+ADDR_GMOVE_RESULT_FLAGS = 0x02023DCC      # u32; miss/effective/etc bitmask
+ADDR_GBATTLE_OUTCOME = 0x02023E8A         # u8; BattleOutcome enum
+ADDR_GBATTLE_WEATHER = 0x02023F1C         # u16; weather bitmask
 
-# gEnemyParty -- the wild/trainer party laid out as 6 * struct Pokemon.
-# Same encrypted-substruct layout as the player party.
-ADDR_GENEMY_PARTY = 0x0202402C  # pokefirered.map: gEnemyParty = 0x0202402c
+# -- Party globals -----------------------------------------------------------
+
+ADDR_GPLAYER_PARTY_COUNT = 0x02024029     # u8; pokefirered.map
+ADDR_GENEMY_PARTY = 0x0202402C            # struct Pokemon[6]; pokefirered.map
+
+# -- Text / dialogue ---------------------------------------------------------
+
+ADDR_GSTRING_VAR4 = 0x02021D18            # message box text buffer (game charset)
+ADDR_GDISPLAYED_STRING_BATTLE = 0x0202298C  # battle-specific displayed text
+ADDR_GSPECIALVAR_LAST_TALKED = 0x020370D2 # u16; local_id of last NPC talked to
+
+# gPlayerAvatar.preventStep -- set TRUE during dialogue, scripts, cutscenes.
+# gPlayerAvatar is at 0x02037078; preventStep is at struct offset 0x06.
+ADDR_GPLAYER_AVATAR_PREVENT_STEP = ADDR_GPLAYER_AVATAR + 0x06
+
+# -- ROM name tables (read-only, never change) -------------------------------
+
+ADDR_GSPECIES_NAMES = 0x08245EE0  # NUM_SPECIES * SPECIES_NAME_LENGTH bytes
+ADDR_GMOVE_NAMES = 0x08247094     # MOVES_COUNT * MOVE_NAME_LENGTH bytes
 
 # -----------------------------------------------------------------------------
 # Offsets into struct SaveBlock1 (pret/include/global.h). All offsets come
@@ -244,6 +271,65 @@ POKEMON_OFFSET_SP_ATTACK = 0x60
 POKEMON_OFFSET_SP_DEFENSE = 0x62
 
 # -----------------------------------------------------------------------------
+# Offsets into struct BattlePokemon (pret/include/pokemon.h).
+# All offsets verified against the /*0xNN*/ comments in the header.
+# Only valid while a battle is active.
+# -----------------------------------------------------------------------------
+
+BPOKE_OFFSET_SPECIES    = 0x00   # u16
+BPOKE_OFFSET_ATTACK     = 0x02   # u16
+BPOKE_OFFSET_DEFENSE    = 0x04   # u16
+BPOKE_OFFSET_SPEED      = 0x06   # u16
+BPOKE_OFFSET_SP_ATTACK  = 0x08   # u16
+BPOKE_OFFSET_SP_DEFENSE = 0x0A   # u16
+BPOKE_OFFSET_MOVES      = 0x0C   # u16[4]
+BPOKE_OFFSET_IV_BLOCK   = 0x14   # u32 bitfield (5-bit IVs + isEgg + abilityNum)
+BPOKE_OFFSET_STAT_STAGES = 0x18  # s8[8] (atk/def/spe/spa/spd/acc/eva/?)
+BPOKE_OFFSET_ABILITY    = 0x20   # u8
+BPOKE_OFFSET_TYPE1      = 0x21   # u8
+BPOKE_OFFSET_TYPE2      = 0x22   # u8
+BPOKE_OFFSET_PP         = 0x24   # u8[4]
+BPOKE_OFFSET_HP         = 0x28   # u16
+BPOKE_OFFSET_LEVEL      = 0x2A   # u8
+BPOKE_OFFSET_FRIENDSHIP = 0x2B   # u8
+BPOKE_OFFSET_MAX_HP     = 0x2C   # u16
+BPOKE_OFFSET_ITEM       = 0x2E   # u16
+BPOKE_OFFSET_NICKNAME   = 0x30   # u8[11]
+BPOKE_OFFSET_PP_BONUSES = 0x3B   # u8
+BPOKE_OFFSET_OT_NAME    = 0x3C   # u8[8]
+BPOKE_OFFSET_EXPERIENCE = 0x44   # u32
+BPOKE_OFFSET_PERSONALITY = 0x48  # u32
+BPOKE_OFFSET_STATUS1    = 0x4C   # u32
+BPOKE_OFFSET_STATUS2    = 0x50   # u32
+BPOKE_OFFSET_OT_ID      = 0x54   # u32
+
+# -----------------------------------------------------------------------------
+# Status condition bitmasks (pret/include/constants/battle.h).
+# -----------------------------------------------------------------------------
+
+STATUS1_NONE          = 0
+STATUS1_SLEEP_MASK    = 0x07    # bits 0-2: sleep turns remaining (0 = awake)
+STATUS1_POISON        = 1 << 3
+STATUS1_BURN          = 1 << 4
+STATUS1_FREEZE        = 1 << 5
+STATUS1_PARALYSIS     = 1 << 6
+STATUS1_TOXIC_POISON  = 1 << 7
+STATUS1_TOXIC_COUNTER = 0x0F00  # bits 8-11: toxic damage counter
+
+# Battle weather bitmask (constants/battle.h B_WEATHER_*).
+B_WEATHER_RAIN_TEMPORARY      = 1 << 0
+B_WEATHER_RAIN_PERMANENT      = 1 << 2
+B_WEATHER_RAIN                = B_WEATHER_RAIN_TEMPORARY | (1 << 1) | B_WEATHER_RAIN_PERMANENT
+B_WEATHER_SANDSTORM_TEMPORARY = 1 << 3
+B_WEATHER_SANDSTORM_PERMANENT = 1 << 4
+B_WEATHER_SANDSTORM           = B_WEATHER_SANDSTORM_TEMPORARY | B_WEATHER_SANDSTORM_PERMANENT
+B_WEATHER_SUN_TEMPORARY       = 1 << 5
+B_WEATHER_SUN_PERMANENT       = 1 << 6
+B_WEATHER_SUN                 = B_WEATHER_SUN_TEMPORARY | B_WEATHER_SUN_PERMANENT
+B_WEATHER_HAIL_TEMPORARY      = 1 << 7
+B_WEATHER_HAIL                = B_WEATHER_HAIL_TEMPORARY
+
+# -----------------------------------------------------------------------------
 # Offsets into struct Main (pret/include/main.h).
 # -----------------------------------------------------------------------------
 
@@ -314,6 +400,22 @@ class GameMode(enum.Enum):
     MENU = "menu"
     CUTSCENE = "cutscene"
     TITLE = "title"
+
+
+class BattleOutcome(enum.IntEnum):
+    """Values from pret/include/constants/battle.h B_OUTCOME_*."""
+
+    ONGOING = 0
+    WON = 1
+    LOST = 2
+    DREW = 3
+    FLED = 4
+    PLAYER_TELEPORTED = 5
+    MON_FLED = 6
+    CAUGHT = 7
+    NO_SAFARI_BALLS = 8
+    FORFEITED = 9
+    MON_TELEPORTED = 10
 
 
 class MetatileBehavior(enum.IntEnum):
@@ -434,6 +536,48 @@ WARP_BEHAVIORS = {
     MetatileBehavior.UP_ESCALATOR,
     MetatileBehavior.DOWN_ESCALATOR,
 }
+
+
+# -----------------------------------------------------------------------------
+# Human-readable decoders for status / weather bitmasks.
+# -----------------------------------------------------------------------------
+
+
+def decode_status1(status: int) -> str:
+    """Decode primary status condition to a readable string."""
+    if status == 0:
+        return "healthy"
+    parts: list[str] = []
+    sleep_turns = status & STATUS1_SLEEP_MASK
+    if sleep_turns:
+        parts.append(f"sleep({sleep_turns})")
+    if status & STATUS1_POISON:
+        parts.append("poison")
+    if status & STATUS1_BURN:
+        parts.append("burn")
+    if status & STATUS1_FREEZE:
+        parts.append("freeze")
+    if status & STATUS1_PARALYSIS:
+        parts.append("paralysis")
+    if status & STATUS1_TOXIC_POISON:
+        parts.append("toxic")
+    return ", ".join(parts) if parts else "healthy"
+
+
+def decode_weather(weather: int) -> str:
+    """Decode battle weather bitmask to a readable string."""
+    if weather == 0:
+        return "none"
+    parts: list[str] = []
+    if weather & B_WEATHER_RAIN:
+        parts.append("rain")
+    if weather & B_WEATHER_SANDSTORM:
+        parts.append("sandstorm")
+    if weather & B_WEATHER_SUN:
+        parts.append("sun")
+    if weather & B_WEATHER_HAIL:
+        parts.append("hail")
+    return ", ".join(parts) if parts else "none"
 
 
 # GBA memory region bounds -- useful for sanity-checking pointer reads.

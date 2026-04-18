@@ -120,11 +120,11 @@ def print_party(reader: RamReader) -> None:
     for m in party:
         egg = " (EGG)" if m.is_egg else ""
         print(
-            f"  slot {m.slot}: L{m.level:<3d} HP {m.hp}/{m.max_hp}  "
+            f"  slot {m.slot}: \"{m.nickname}\" L{m.level:<3d} HP {m.hp}/{m.max_hp}  "
             f"atk={m.attack} def={m.defense} spe={m.speed} "
             f"spa={m.sp_attack} spd={m.sp_defense}  "
-            f"pid={m.personality:#010x} otid={m.ot_id:#010x} "
-            f"status={m.status:#010x}{egg}"
+            f"status={m.status_text}  "
+            f"pid={m.personality:#010x} otid={m.ot_id:#010x}{egg}"
         )
 
 
@@ -137,6 +137,54 @@ def print_money(reader: RamReader) -> None:
     _section("Money (SaveBlock1.money ^ SaveBlock2.encryptionKey)")
     _try("key  ", lambda: f"{reader.read_encryption_key():#010x}")
     _try("money", reader.read_money)
+
+
+def print_battle(reader: RamReader) -> None:
+    _section("Battle state (gBattleMons + battle globals)")
+    try:
+        bs = reader.read_battle_state()
+    except Exception as exc:  # noqa: BLE001
+        print(f"<error: {exc}>")
+        return
+    if not bs.active:
+        print("  (not in battle)")
+        return
+    print(f"  battlers      : {bs.battlers_count}")
+    print(f"  outcome       : {bs.outcome_text}")
+    print(f"  weather       : {bs.weather_text}")
+    print(f"  current move  : {bs.current_move_name} (#{bs.current_move})")
+    print(f"  alive (ours)  : {bs.player_party_alive}   alive (theirs): {bs.enemy_party_alive}")
+    for label, mon in [("Player", bs.player), ("Enemy", bs.enemy)]:
+        if mon is None:
+            continue
+        moves_str = ", ".join(
+            f"{n}({p})" for n, p in zip(mon.move_names, mon.pp) if n != "-"
+        )
+        print(
+            f"  {label:6s}: {mon.nickname} ({mon.species_name}) L{mon.level}  "
+            f"HP {mon.hp}/{mon.max_hp}  "
+            f"atk={mon.attack} def={mon.defense} spe={mon.speed} "
+            f"spa={mon.sp_attack} spd={mon.sp_defense}  "
+            f"status={mon.status_text}"
+        )
+        if moves_str:
+            print(f"          moves: {moves_str}")
+
+
+def print_dialogue(reader: RamReader) -> None:
+    _section("Dialogue / text state")
+    _try("movement locked", reader.is_movement_locked)
+    _try("last talked NPC", reader.read_last_talked_npc)
+    try:
+        text = reader.read_dialogue_text()
+    except Exception as exc:  # noqa: BLE001
+        print(f"  text: <error: {exc}>")
+        return
+    if text is None:
+        print("  text: (none)")
+    else:
+        for line in text.split("\n"):
+            print(f"  text: {line}")
 
 
 def print_map(reader: RamReader) -> None:
@@ -171,6 +219,8 @@ SECTIONS: dict[str, Callable[[RamReader], None]] = {
     "player": print_player,
     "objects": print_object_events,
     "party": print_party,
+    "battle": print_battle,
+    "dialogue": print_dialogue,
     "mode": print_game_mode,
     "money": print_money,
     "map": print_map,

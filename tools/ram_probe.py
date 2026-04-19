@@ -25,7 +25,14 @@ from __future__ import annotations
 import argparse
 import sys
 import time
+from pathlib import Path
 from typing import Callable
+
+# Allow `python tools/ram_probe.py` as well as `python -m tools.ram_probe`.
+# When launched as a script, the repo root isn't on sys.path, so the
+# top-level `ram` package can't be imported without this nudge.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from ram import MgbaHttpBackend, MgbaHttpError, RamReader
 from ram import constants as C
@@ -211,6 +218,26 @@ def print_map(reader: RamReader) -> None:
         print(f"  under player: <error: {exc}>")
 
 
+def print_hex_dump(reader: RamReader, addr: int, length: int) -> None:
+    """Classic 16-cols hex-dump of `length` bytes starting at `addr`.
+
+    Handy for confirming a fixed-address constant against mGBA's memory
+    viewer, and for sharing a snippet of raw bytes when a decoded value
+    looks wrong.
+    """
+    _section(f"Hex dump {addr:#010x} .. {addr + length:#010x} ({length} bytes)")
+    try:
+        raw = reader.read_bytes(addr, length)
+    except Exception as exc:  # noqa: BLE001
+        print(f"<error: {exc}>")
+        return
+    for row in range(0, len(raw), 16):
+        chunk = raw[row : row + 16]
+        hex_part = " ".join(f"{b:02x}" for b in chunk)
+        ascii_part = "".join(chr(b) if 32 <= b < 127 else "." for b in chunk)
+        print(f"  {addr + row:#010x}  {hex_part:<47s}  |{ascii_part}|")
+
+
 # -----------------------------------------------------------------------------
 # Command dispatch.
 # -----------------------------------------------------------------------------
@@ -258,11 +285,12 @@ def main(argv: list[str] | None = None) -> int:
         "command",
         nargs="?",
         default="all",
-        choices=["all", "watch", *SECTIONS.keys()],
+        choices=["all", "watch", "bytes", *SECTIONS.keys()],
         help=(
             "What to dump. 'all' (default) runs every section once; 'watch' "
-            "re-runs 'all' on a loop. The other choices print a single "
-            "section."
+            "re-runs 'all' on a loop; 'bytes' prints a hex dump of "
+            "--address for --length bytes. The other choices print a "
+            "single section."
         ),
     )
     parser.add_argument(
@@ -270,6 +298,18 @@ def main(argv: list[str] | None = None) -> int:
         type=float,
         default=1.0,
         help="Refresh interval in seconds for 'watch' mode (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--address",
+        type=lambda s: int(s, 0),
+        default=None,
+        help="For 'bytes' mode: GBA bus address (hex ok, e.g. 0x02023BE4).",
+    )
+    parser.add_argument(
+        "--length",
+        type=lambda s: int(s, 0),
+        default=64,
+        help="For 'bytes' mode: number of bytes to dump (default: %(default)s).",
     )
     args = parser.parse_args(argv)
 
@@ -300,6 +340,10 @@ def main(argv: list[str] | None = None) -> int:
             return 0
     elif args.command == "all":
         dump_all(reader, backend)
+    elif args.command == "bytes":
+        if args.address is None:
+            parser.error("'bytes' requires --address, e.g. --address 0x02023BE4")
+        print_hex_dump(reader, args.address, args.length)
     else:
         print_header(reader, backend)
         SECTIONS[args.command](reader)

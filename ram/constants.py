@@ -165,10 +165,18 @@ FIELD_MESSAGE_BOX_HIDDEN = 0
 FIELD_MESSAGE_BOX_NORMAL = 1
 FIELD_MESSAGE_BOX_AUTO_SCROLL = 2
 
-# -- ROM name tables (read-only, never change) -------------------------------
-
-ADDR_GSPECIES_NAMES = 0x08245EE0  # NUM_SPECIES * SPECIES_NAME_LENGTH bytes
-ADDR_GMOVE_NAMES = 0x08247094     # MOVES_COUNT * MOVE_NAME_LENGTH bytes
+# -- ROM name tables (read-only) --------------------------------------------
+#
+# Addresses are for the FireRed US v1.1 retail ROM (BPRE1). v1.1 inserts
+# ~0x70 bytes of code ahead of the name tables versus v1.0 (BPRE0), so
+# every ROM symbol past that shift moves by +0x70. pokefirered.map in
+# ./pret is the v1.0 build, so the map's gSpeciesNames/gMoveNames are at
+# 0x08245EE0 / 0x08247094; the addresses below add the +0x70 offset.
+# Verified empirically by reading move #10 and seeing the end of POUND
+# followed by the start of KARATE_CHOP at the v1.0 offset -- consistent
+# with a v1.1 ROM being read through v1.0 addresses.
+ADDR_GSPECIES_NAMES = 0x08245F50  # NUM_SPECIES * SPECIES_NAME_LENGTH bytes
+ADDR_GMOVE_NAMES = 0x08247104     # MOVES_COUNT * MOVE_NAME_LENGTH bytes
 
 # -----------------------------------------------------------------------------
 # Offsets into struct SaveBlock1 (pret/include/global.h). All offsets come

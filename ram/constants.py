@@ -133,9 +133,37 @@ ADDR_GSTRING_VAR4 = 0x02021D18            # message box text buffer (game charse
 ADDR_GDISPLAYED_STRING_BATTLE = 0x0202298C  # battle-specific displayed text
 ADDR_GSPECIALVAR_LAST_TALKED = 0x020370D2 # u16; local_id of last NPC talked to
 
-# gPlayerAvatar.preventStep -- set TRUE during dialogue, scripts, cutscenes.
-# gPlayerAvatar is at 0x02037078; preventStep is at struct offset 0x06.
+# sMessageBoxType -- pret/src/field_message_box.c static, the single byte of
+# field_message_box.o's ewram_data in pokefirered.map (0x0203709C, size 0x1).
+# 0 == FIELD_MESSAGE_BOX_HIDDEN, 1 == NORMAL, 2 == AUTO_SCROLL.
+ADDR_SMESSAGE_BOX_TYPE = 0x0203709C
+
+# sLockFieldControls -- pret/src/script.c static bool8. Set TRUE whenever
+# LockPlayerFieldControls() is called (dialogue, scripts, cutscenes, battle
+# setup, warps); read back by ArePlayerFieldControlsLocked() which the
+# overworld callback uses to decide whether to accept player input.
+#
+# Not a named symbol in the linker map; its address is computed from the
+# .bss block for script.o (0x03000EA8, total 0xFA bytes). Declaration order
+# in script.c lines 29-39 gives the exact layout (verified: sum of member
+# sizes matches 0xFA):
+#   +0x00 sGlobalScriptContextStatus  (u8)
+#   +0x04 sUnusedVariable1            (u32)
+#   +0x08 sGlobalScriptContext        (struct, 0x74)
+#   +0x7C sUnusedVariable2            (u32)
+#   +0x80 sImmediateScriptContext     (struct, 0x74)
+#   +0xF4 sLockFieldControls          (bool8) <--
+#   +0xF5 .. 0xF9  six more u8 statics
+ADDR_SLOCK_FIELD_CONTROLS = 0x03000F9C
+
+# gPlayerAvatar.preventStep -- TRUE during field effect animations (surf,
+# teleport, warp transitions). NOT a dialogue indicator; use
+# ADDR_SLOCK_FIELD_CONTROLS for that.
 ADDR_GPLAYER_AVATAR_PREVENT_STEP = ADDR_GPLAYER_AVATAR + 0x06
+
+FIELD_MESSAGE_BOX_HIDDEN = 0
+FIELD_MESSAGE_BOX_NORMAL = 1
+FIELD_MESSAGE_BOX_AUTO_SCROLL = 2
 
 # -- ROM name tables (read-only, never change) -------------------------------
 

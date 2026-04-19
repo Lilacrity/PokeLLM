@@ -549,8 +549,14 @@ class RamReader:
         type (wild, trainer, double, ...) but is never explicitly zeroed
         when battle ends, so it would stick as a false positive.
 
-        Outside of battle, ``gPlayerAvatar.preventStep`` is checked to
-        detect dialogue / script / cutscene states.
+        Outside of battle, ``sLockFieldControls`` (the static bool8 read by
+        ``ArePlayerFieldControlsLocked()``) is the canonical "is player
+        input currently locked" flag -- set by dialogue, scripts, warps,
+        battle setup, etc. This matches the check the overworld callback
+        itself uses, so it mirrors in-game movement-locked semantics.
+        ``gPlayerAvatar.preventStep`` is *not* used here: it only tracks
+        mid-field-effect animations (surfing entry, teleport, etc.) and
+        does not toggle for ordinary dialogue.
         """
         try:
             flags_byte = self.read_u8(C.ADDR_GMAIN + C.GMAIN_OFFSET_FLAGS_BYTE)
@@ -560,9 +566,8 @@ class RamReader:
         if flags_byte & C.GMAIN_FLAG_IN_BATTLE:
             return C.GameMode.BATTLE
 
-        # Dialogue / script / cutscene detection via preventStep.
         try:
-            if self.read_u8(C.ADDR_GPLAYER_AVATAR_PREVENT_STEP):
+            if self.read_u8(C.ADDR_SLOCK_FIELD_CONTROLS):
                 return C.GameMode.DIALOGUE
         except Exception:
             pass
@@ -696,9 +701,20 @@ class RamReader:
     def is_movement_locked(self) -> bool:
         """True when dialogue, cutscene, or script prevents player movement.
 
-        Reads ``gPlayerAvatar.preventStep`` (bool8 at PlayerAvatar+0x06).
+        Reads ``sLockFieldControls`` -- the static bool8 behind
+        ``ArePlayerFieldControlsLocked()`` in pret/src/script.c. This is the
+        exact flag the overworld callback checks before accepting input.
         """
-        return self.read_u8(C.ADDR_GPLAYER_AVATAR_PREVENT_STEP) != 0
+        return self.read_u8(C.ADDR_SLOCK_FIELD_CONTROLS) != 0
+
+    def is_field_message_visible(self) -> bool:
+        """True when a field dialogue box is currently drawn.
+
+        Reads ``sMessageBoxType`` (pret/src/field_message_box.c). Unlike
+        ``is_movement_locked``, this only fires while text is actually on
+        screen -- not during non-dialogue script steps or cutscene beats.
+        """
+        return self.read_u8(C.ADDR_SMESSAGE_BOX_TYPE) != C.FIELD_MESSAGE_BOX_HIDDEN
 
     def read_last_talked_npc(self) -> int:
         """Local ID of the last NPC the player interacted with."""

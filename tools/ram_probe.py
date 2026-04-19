@@ -173,8 +173,9 @@ def print_battle(reader: RamReader) -> None:
 
 def print_dialogue(reader: RamReader) -> None:
     _section("Dialogue / text state")
-    _try("movement locked", reader.is_movement_locked)
-    _try("last talked NPC", reader.read_last_talked_npc)
+    _try("movement locked    ", reader.is_movement_locked)
+    _try("field msg visible  ", reader.is_field_message_visible)
+    _try("last talked NPC    ", reader.read_last_talked_npc)
     try:
         text = reader.read_dialogue_text()
     except Exception as exc:  # noqa: BLE001

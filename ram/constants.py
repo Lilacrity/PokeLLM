@@ -1,16 +1,15 @@
-"""Named RAM constants for Pokemon FireRed (US, rev 1.0 / BPRE0).
+"""Named RAM constants for Pokemon FireRed (US, rev 1.1 / BPRE1).
 
 Two classes of value live here:
 
 *   **Pointer / fixed-address anchors** (ADDR_*). Absolute GBA memory
     addresses. Pointer anchors (SaveBlock1, SaveBlock2) are version-stable
     because they live in the fixed scratch region at 0x03005008 /
-    0x0300500C. The fixed-array anchors (gObjectEvents, gMain,
-    gBackupMapData, gBattleMons, ...) shift between ROM revisions.
-    Where a value was verified against the pret/pokefirered decomp that
-    lives alongside this project it is marked ``(pret)``; others are from
-    the community FireRed v1.0 map (Data Crystal) and should be
-    re-verified in mGBA's memory viewer before being trusted.
+    0x0300500C. ROM symbols (name tables, etc.) are BPRE1-specific: the
+    pret/pokefirered map in ./pret is a BPRE0 build, so ROM addresses
+    past the v1.1 shift point are taken from the map plus +0x70.
+    EWRAM/IWRAM anchors (gObjectEvents, gMain, gBackupMapData,
+    gBattleMons, ...) are identical between BPRE0 and BPRE1.
 
 *   **Struct offsets** (OFFSET_*). Byte offsets inside a known struct.
     These come straight from the ``/*0xNN*/`` layout comments in the
@@ -34,7 +33,11 @@ import enum
 PARTY_SIZE = 6
 OBJECT_EVENTS_COUNT = 16  # FRLG; RSE uses a different value
 MAP_OFFSET = 7            # invisible border tiles on each side of the map grid
-MAP_OFFSET_W = MAP_OFFSET * 2
+# pret/include/fieldmap.h: MAP_OFFSET_W = MAP_OFFSET * 2 + 1 = 15,
+# MAP_OFFSET_H = MAP_OFFSET * 2 = 14. The extra column on W reflects the
+# asymmetry fieldmap.c bakes into the backup buffer: VMap.Xsize gets
+# width + MAP_OFFSET_W, Ysize gets height + MAP_OFFSET_H.
+MAP_OFFSET_W = MAP_OFFSET * 2 + 1
 MAP_OFFSET_H = MAP_OFFSET * 2
 
 POKEMON_SIZE = 0x64          # sizeof(struct Pokemon)
@@ -121,6 +124,15 @@ ADDR_GBATTLER_TARGET = 0x02023D6C         # u8; battler slot of target
 ADDR_GMOVE_RESULT_FLAGS = 0x02023DCC      # u32; miss/effective/etc bitmask
 ADDR_GBATTLE_OUTCOME = 0x02023E8A         # u8; BattleOutcome enum
 ADDR_GBATTLE_WEATHER = 0x02023F1C         # u16; weather bitmask
+
+# u16; opponent-A trainer ID lives in its own EWRAM slot (0 for wild battles).
+# The full trainer record (name, class, party) is in ROM at gTrainers; we only
+# need the ID here for "is this a trainer fight" bookkeeping.
+ADDR_GTRAINER_BATTLE_OPPONENT_A = 0x020386AE
+
+# struct BattleResults in IWRAM -- populated on battle exit (mon that KO'd us,
+# turns taken, etc). Address retained for a later phase; not read yet.
+ADDR_GBATTLE_RESULTS = 0x03004F90
 
 # -- Party globals -----------------------------------------------------------
 
@@ -403,6 +415,181 @@ METATILE_ATTR_ENCOUNTER_SHIFT = 24
 
 
 # -----------------------------------------------------------------------------
+# gBattleTypeFlags bit positions (pret/include/constants/battle.h).
+# Only the bits we classify on here. Full list in the header.
+# -----------------------------------------------------------------------------
+
+BATTLE_TYPE_DOUBLE          = 1 << 0
+BATTLE_TYPE_LINK            = 1 << 1
+BATTLE_TYPE_IS_MASTER       = 1 << 2
+BATTLE_TYPE_TRAINER         = 1 << 3   # the "is this a trainer fight" bit
+BATTLE_TYPE_FIRST_BATTLE    = 1 << 4
+BATTLE_TYPE_SAFARI          = 1 << 7
+BATTLE_TYPE_BATTLE_TOWER    = 1 << 8
+BATTLE_TYPE_OLD_MAN_TUTORIAL = 1 << 9  # FRLG Viridian Old Man "catch tutorial"
+BATTLE_TYPE_ROAMER          = 1 << 10
+BATTLE_TYPE_LEGENDARY       = 1 << 13
+BATTLE_TYPE_GHOST           = 1 << 15  # Pokemon Tower unveiled-Marowak fights
+BATTLE_TYPE_POKEDUDE        = 1 << 16  # FRLG Pokedude tutorial battle
+BATTLE_TYPE_LEGENDARY_FRLG  = 1 << 18
+
+# Battles where catching is blocked even without BATTLE_TYPE_TRAINER set.
+BATTLE_TYPE_UNCATCHABLE_MASK = (
+    BATTLE_TYPE_TRAINER
+    | BATTLE_TYPE_LINK
+    | BATTLE_TYPE_BATTLE_TOWER
+    | BATTLE_TYPE_OLD_MAN_TUTORIAL
+    | BATTLE_TYPE_POKEDUDE
+)
+
+
+# -----------------------------------------------------------------------------
+# Map header / events / layout / tileset struct offsets
+# (pret/include/global.fieldmap.h).
+# -----------------------------------------------------------------------------
+
+# struct MapHeader at gMapHeader (ADDR_GMAP_HEADER).
+MAP_HEADER_OFFSET_MAP_LAYOUT  = 0x00  # const struct MapLayout *
+MAP_HEADER_OFFSET_EVENTS      = 0x04  # const struct MapEvents *
+MAP_HEADER_OFFSET_SCRIPTS     = 0x08  # const u8 *
+MAP_HEADER_OFFSET_CONNECTIONS = 0x0C  # const struct MapConnections *
+
+# struct MapConnections -- {s32 count; const struct MapConnection *}
+MAP_CONNECTIONS_OFFSET_COUNT        = 0x00  # s32
+MAP_CONNECTIONS_OFFSET_CONNS_PTR    = 0x04  # const struct MapConnection *
+
+# struct MapConnection is 10 bytes of data but padded to 12 by alignment
+# (the s32 offset field forces 4-byte alignment on the following u8 pair).
+MAP_CONNECTION_SIZE             = 0x0C
+MAP_CONNECTION_OFFSET_DIRECTION = 0x00  # u8: CONNECTION_*
+MAP_CONNECTION_OFFSET_OFFSET    = 0x04  # s32 (shift along the shared edge)
+MAP_CONNECTION_OFFSET_MAP_GROUP = 0x08  # u8
+MAP_CONNECTION_OFFSET_MAP_NUM   = 0x09  # u8
+
+# pret/include/constants/global.h
+CONNECTION_NONE     = 0
+CONNECTION_SOUTH    = 1
+CONNECTION_NORTH    = 2
+CONNECTION_WEST     = 3
+CONNECTION_EAST     = 4
+CONNECTION_DIVE     = 5
+CONNECTION_EMERGE   = 6
+MAP_HEADER_OFFSET_MUSIC       = 0x10  # u16
+MAP_HEADER_OFFSET_LAYOUT_ID   = 0x12  # u16
+MAP_HEADER_OFFSET_REGION_ID   = 0x14  # u8
+MAP_HEADER_OFFSET_CAVE        = 0x15  # u8
+MAP_HEADER_OFFSET_WEATHER     = 0x16  # u8
+MAP_HEADER_OFFSET_MAP_TYPE    = 0x17  # u8
+MAP_HEADER_OFFSET_BATTLE_TYPE = 0x1B  # u8
+
+# struct MapLayout (pointer lives at MapHeader + MAP_HEADER_OFFSET_MAP_LAYOUT).
+MAP_LAYOUT_OFFSET_WIDTH              = 0x00  # s32
+MAP_LAYOUT_OFFSET_HEIGHT             = 0x04  # s32
+MAP_LAYOUT_OFFSET_BORDER             = 0x08  # const u16 *
+MAP_LAYOUT_OFFSET_MAP                = 0x0C  # const u16 *
+MAP_LAYOUT_OFFSET_PRIMARY_TILESET    = 0x10  # const struct Tileset *
+MAP_LAYOUT_OFFSET_SECONDARY_TILESET  = 0x14  # const struct Tileset *
+MAP_LAYOUT_OFFSET_BORDER_WIDTH       = 0x18  # u8
+MAP_LAYOUT_OFFSET_BORDER_HEIGHT      = 0x19  # u8
+
+# struct Tileset. metatileAttributes sits at +0x14 (four u32 pointers
+# precede it, not three -- the isSecondary/isCompressed bools take up the
+# first 4-byte slot with padding before the `tiles` pointer).
+TILESET_OFFSET_IS_COMPRESSED      = 0x00  # bool8
+TILESET_OFFSET_IS_SECONDARY       = 0x01  # bool8
+TILESET_OFFSET_TILES              = 0x04  # const u32 *
+TILESET_OFFSET_PALETTES           = 0x08  # const u16 (*)[16]
+TILESET_OFFSET_METATILES          = 0x0C  # const u16 *
+TILESET_OFFSET_CALLBACK           = 0x10  # fn ptr
+TILESET_OFFSET_METATILE_ATTRS     = 0x14  # const u32 *
+
+# Metatile IDs 0x000-0x27F use the primary tileset; 0x280-0x3FF the
+# secondary. FRLG raised the primary tileset count from RSE's 512 (0x200)
+# to 640 (0x280) -- pret/include/fieldmap.h NUM_METATILES_IN_PRIMARY.
+# Using the RSE value misroutes ids in [0x200, 0x27F] into the secondary
+# attributes array and returns whatever junk happens to live at that
+# offset, which is exactly what was painting random tiles in Viridian
+# blue.
+NUM_METATILES_IN_PRIMARY = 0x280
+NUM_METATILES_IN_SECONDARY = 0x180
+NUM_METATILES_TOTAL = NUM_METATILES_IN_PRIMARY + NUM_METATILES_IN_SECONDARY
+
+# struct MapEvents -- four u8 counts followed by four pointers.
+MAP_EVENTS_OFFSET_OBJECT_EVENT_COUNT = 0x00  # u8
+MAP_EVENTS_OFFSET_WARP_COUNT         = 0x01  # u8
+MAP_EVENTS_OFFSET_COORD_EVENT_COUNT  = 0x02  # u8
+MAP_EVENTS_OFFSET_BG_EVENT_COUNT     = 0x03  # u8
+MAP_EVENTS_OFFSET_OBJECT_EVENTS_PTR  = 0x04  # const struct ObjectEventTemplate *
+MAP_EVENTS_OFFSET_WARPS_PTR          = 0x08  # const struct WarpEvent *
+MAP_EVENTS_OFFSET_COORD_EVENTS_PTR   = 0x0C  # const struct CoordEvent *
+MAP_EVENTS_OFFSET_BG_EVENTS_PTR      = 0x10  # const struct BgEvent *
+
+# struct WarpEvent (8 bytes, no padding).
+WARP_EVENT_SIZE              = 0x08
+WARP_EVENT_OFFSET_X          = 0x00  # s16
+WARP_EVENT_OFFSET_Y          = 0x02  # s16
+WARP_EVENT_OFFSET_ELEVATION  = 0x04  # u8
+WARP_EVENT_OFFSET_WARP_ID    = 0x05  # u8 (index into the destination's warp list)
+WARP_EVENT_OFFSET_MAP_NUM    = 0x06  # u8
+WARP_EVENT_OFFSET_MAP_GROUP  = 0x07  # u8
+
+# struct BgEvent (12 bytes -- 2 bytes padding between kind@0x05 and union@0x08
+# to align the 4-byte hiddenItem / script union).
+BG_EVENT_SIZE              = 0x0C
+BG_EVENT_OFFSET_X          = 0x00  # u16
+BG_EVENT_OFFSET_Y          = 0x02  # u16
+BG_EVENT_OFFSET_ELEVATION  = 0x04  # u8
+BG_EVENT_OFFSET_KIND       = 0x05  # u8 (see BG_EVENT_KIND_* below)
+BG_EVENT_OFFSET_UNION      = 0x08  # u32; script ptr OR packed hidden item
+
+# struct CoordEvent (16 bytes; kept here even though we don't decode them --
+# walking past them requires the right stride).
+COORD_EVENT_SIZE = 0x10
+
+# struct ObjectEventTemplate (static ROM-side template, distinct from the
+# runtime struct ObjectEvent in gObjectEvents).
+OBJECT_EVENT_TEMPLATE_SIZE = 0x18
+
+# BgEvent.kind values (pret/include/constants/event_bg.h). FRLG only uses
+# 0-4 for signs and 7 for hidden items; 8 (SECRET_BASE) is defined but
+# never referenced in FRLG scripts.
+BG_EVENT_KIND_PLAYER_FACING_ANY   = 0
+BG_EVENT_KIND_PLAYER_FACING_NORTH = 1
+BG_EVENT_KIND_PLAYER_FACING_SOUTH = 2
+BG_EVENT_KIND_PLAYER_FACING_EAST  = 3
+BG_EVENT_KIND_PLAYER_FACING_WEST  = 4
+BG_EVENT_KIND_HIDDEN_ITEM         = 7
+BG_EVENT_KIND_SECRET_BASE         = 8
+
+SIGN_BG_EVENT_KINDS = {
+    BG_EVENT_KIND_PLAYER_FACING_ANY,
+    BG_EVENT_KIND_PLAYER_FACING_NORTH,
+    BG_EVENT_KIND_PLAYER_FACING_SOUTH,
+    BG_EVENT_KIND_PLAYER_FACING_EAST,
+    BG_EVENT_KIND_PLAYER_FACING_WEST,
+}
+
+# -----------------------------------------------------------------------------
+# Object-event graphics IDs for HM-obstacle / treasure sprites
+# (pret/include/constants/event_objects.h). FRLG identifies cuttable trees,
+# breakable rocks, strength boulders, and item balls by graphicsId rather
+# than by a metatile behaviour -- they ship as regular ObjectEvents.
+# -----------------------------------------------------------------------------
+
+OBJ_EVENT_GFX_ITEM_BALL         = 92
+OBJ_EVENT_GFX_CUT_TREE          = 95
+OBJ_EVENT_GFX_ROCK_SMASH_ROCK   = 96
+OBJ_EVENT_GFX_PUSHABLE_BOULDER  = 97
+
+# Interactable-counter staff: Nurse Joy (PokeCenter heal) and Clerk
+# (Mart shop). Each one sits behind exactly one COUNTER tile, and that
+# tile is the only A-pressable counter on the row -- the rest are pure
+# decoration, the player can't reach the NPC behind them.
+OBJ_EVENT_GFX_NURSE             = 64
+OBJ_EVENT_GFX_CLERK             = 68
+
+
+# -----------------------------------------------------------------------------
 # Enums. Name -> value pulled from the relevant constants/*.h file.
 # -----------------------------------------------------------------------------
 
@@ -476,7 +663,11 @@ class MetatileBehavior(enum.IntEnum):
     OCEAN_WATER = 0x15
     PUDDLE = 0x16
     SHALLOW_WATER = 0x17
+    UNDERWATER_BLOCKED_ABOVE = 0x19
+    UNUSED_WATER = 0x1A
+    CYCLING_ROAD_WATER = 0x1B
 
+    STRENGTH_BUTTON = 0x20  # switch tile pushed by a Strength boulder landing on it
     SAND = 0x21
     ICE = 0x23
     ROCK_STAIRS = 0x2A
@@ -550,13 +741,23 @@ IMPASSABLE_BEHAVIORS = {
     MetatileBehavior.IMPASSABLE_SOUTHWEST,
 }
 
+# "Real" water -- impassable on foot, requires Surf (or is a Waterfall).
+# Mirrors pret/src/metatile_behavior.c sBehaviorSurfable[]. SHALLOW_WATER
+# (0x17) and PUDDLE (0x16) are NOT in here: the player walks straight
+# through both, the engine just plays a splash effect (see
+# MetatileBehavior_IsShallowFlowingWater / MetatileBehavior_IsPuddle).
 WATER_BEHAVIORS = {
     MetatileBehavior.POND_WATER,
     MetatileBehavior.FAST_WATER,
     MetatileBehavior.DEEP_WATER,
     MetatileBehavior.WATERFALL,
     MetatileBehavior.OCEAN_WATER,
-    MetatileBehavior.SHALLOW_WATER,
+    MetatileBehavior.UNUSED_WATER,
+    MetatileBehavior.CYCLING_ROAD_WATER,
+    MetatileBehavior.EASTWARD_CURRENT,
+    MetatileBehavior.WESTWARD_CURRENT,
+    MetatileBehavior.NORTHWARD_CURRENT,
+    MetatileBehavior.SOUTHWARD_CURRENT,
 }
 
 WARP_BEHAVIORS = {

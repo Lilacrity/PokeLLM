@@ -1,0 +1,1226 @@
+{
+  "map_group": 5,
+  "map_num": 3,
+  "width": 11,
+  "height": 9,
+  "explored_tiles": [
+    {
+      "x": 0,
+      "y": 0,
+      "metatile_id": 656,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "metatile_id": 645,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "metatile_id": 646,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "metatile_id": 645,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "metatile_id": 658,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "metatile_id": 659,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "metatile_id": 660,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "metatile_id": 657,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 89
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "metatile_id": 664,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "metatile_id": 693,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "metatile_id": 654,
+      "behavior": 152,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "metatile_id": 661,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "metatile_id": 666,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "metatile_id": 667,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "metatile_id": 668,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "metatile_id": 665,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 90
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "metatile_id": 672,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "metatile_id": 694,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "metatile_id": 669,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "metatile_id": 643,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "metatile_id": 674,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "metatile_id": 675,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "metatile_id": 676,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "metatile_id": 673,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "metatile_id": 680,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "metatile_id": 681,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "metatile_id": 682,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "metatile_id": 677,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "metatile_id": 662,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "metatile_id": 663,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "metatile_id": 662,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "metatile_id": 688,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "metatile_id": 689,
+      "behavior": 143,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "metatile_id": 690,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "metatile_id": 685,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "metatile_id": 670,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "metatile_id": 671,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "metatile_id": 670,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "metatile_id": 642,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "metatile_id": 700,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "metatile_id": 652,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "metatile_id": 678,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "metatile_id": 679,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "metatile_id": 678,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "metatile_id": 642,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "metatile_id": 705,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "metatile_id": 706,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "metatile_id": 686,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 6,
+      "metatile_id": 687,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 6,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "metatile_id": 686,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "metatile_id": 701,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "metatile_id": 650,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "metatile_id": 696,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "metatile_id": 697,
+      "behavior": 101,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "metatile_id": 698,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "metatile_id": 650,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 7,
+      "metatile_id": 652,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 7,
+      "metatile_id": 702,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "metatile_id": 26,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "metatile_id": 27,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "metatile_id": 28,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 8,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 9,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 0,
+      "last_seen_step": 93
+    }
+  ],
+  "seen_interactables": [
+    {
+      "x": 2,
+      "y": 3,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 6,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "kind": "warp",
+      "label": "Warp -> (3, 1)",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "kind": "shop_counter",
+      "label": "Mart Shop Counter",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "kind": "shop_counter",
+      "label": "Mart Shop Counter",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 6,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "kind": "pokemart_shelf",
+      "label": "PokeMart Shelf",
+      "first_seen_step": 0,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 3,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 4,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 7,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 10,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 81,
+      "interacted": false,
+      "interaction_result": null
+    }
+  ],
+  "known_warps": [
+    {
+      "from_map": [
+        5,
+        3
+      ],
+      "from_tile": [
+        4,
+        7
+      ],
+      "to_map": [
+        3,
+        1
+      ],
+      "to_warp_id": 4,
+      "used": false
+    }
+  ],
+  "connections": []
+}

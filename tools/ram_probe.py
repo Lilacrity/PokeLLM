@@ -89,16 +89,24 @@ def print_player(reader: RamReader) -> None:
 
 
 def print_object_events(reader: RamReader) -> None:
-    _section("Object events (active only)")
+    _section("Object events (active, in 15x11 window around player)")
     try:
         slots = reader.read_object_events()
+        st = reader.read_player_state()
     except Exception as exc:  # noqa: BLE001
         print(f"<error: {exc}>")
         return
     if not slots:
         print("  (no active slots)")
         return
-    for s in slots:
+    # Same window as RamReader.read_visible_interactables: 15 wide
+    # (player_x +/- 7) by 11 tall (player_y - 5 .. + 5). Slots that
+    # fall outside it get reported separately so the probe still shows
+    # everything active without burying what's actually on screen.
+    min_x, max_x = st.x - 7, st.x + 7
+    min_y, max_y = st.y - 5, st.y + 5
+
+    def _format(s) -> str:
         tags = []
         if s.is_player:
             tags.append("PLAYER")
@@ -107,11 +115,31 @@ def print_object_events(reader: RamReader) -> None:
         if s.off_screen:
             tags.append("offscreen")
         tag_str = f" [{', '.join(tags)}]" if tags else ""
-        print(
+        return (
             f"  slot {s.slot:2d}{tag_str}: gfx={s.graphics_id:3d} "
             f"mvmt={s.movement_type:3d} at ({s.x},{s.y}) "
             f"facing={s.facing.name:5s} mb={s.current_metatile_behavior:#04x}"
         )
+
+    in_view = []
+    out_view = []
+    for s in slots:
+        if s.is_player:
+            in_view.append(s)
+            continue
+        if min_x <= s.x <= max_x and min_y <= s.y <= max_y:
+            in_view.append(s)
+        else:
+            out_view.append(s)
+    if not in_view:
+        print("  (no slots in view)")
+    else:
+        for s in in_view:
+            print(_format(s))
+    if out_view:
+        print(f"  -- {len(out_view)} other active slot(s) outside window --")
+        for s in out_view:
+            print(_format(s))
 
 
 def print_party(reader: RamReader) -> None:
@@ -195,6 +223,78 @@ def print_dialogue(reader: RamReader) -> None:
             print(f"  text: {line}")
 
 
+def print_interactables(reader: RamReader) -> None:
+    _section("Visible interactables (15x11 window)")
+    try:
+        st = reader.read_player_state()
+        inter = reader.read_visible_interactables(st.x, st.y)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  <error: {exc}>")
+        return
+    if not inter:
+        print("  (none in view)")
+        return
+    # Sort by (y, x) so the output roughly matches reading order on screen.
+    for it in sorted(inter, key=lambda i: (i.y, i.x)):
+        dx, dy = it.x - st.x, it.y - st.y
+        extras: list[str] = []
+        if it.kind == "warp":
+            extras.append(
+                f"-> map({it.details['dest_map_group']},"
+                f"{it.details['dest_map_num']}) "
+                f"warp#{it.details['dest_warp_id']}"
+            )
+        elif it.kind in ("sign", "hidden_item", "secret_base"):
+            extras.append(f"data={it.details['data']:#010x}")
+        elif "graphics_id" in it.details:
+            extras.append(f"gfx={it.details['graphics_id']}")
+            if it.details.get("trainer_type"):
+                extras.append(f"trainer_type={it.details['trainer_type']}")
+        extra_str = f"  [{', '.join(extras)}]" if extras else ""
+        print(
+            f"  ({it.x:3d},{it.y:3d}) d=({dx:+d},{dy:+d})  "
+            f"{it.kind:12s} {it.label}{extra_str}"
+        )
+
+
+def print_tiles(reader: RamReader) -> None:
+    """Dump the 15x11 visible window as a grid of (metatile_id, behavior).
+
+    This is the debug aid for "why doesn't the PokeCenter counter show
+    up as an interactable?" -- the behavior printed here is the raw
+    9-bit value we classify against. If (7,3) doesn't show 0x80, the
+    interactables sweep won't either; compare against mGBA's memory
+    viewer to locate the attribute word for that metatile id.
+    """
+    _section("Visible tiles (15x11 window, metatile_id/behavior)")
+    try:
+        st = reader.read_player_state()
+        tiles = reader.read_visible_tiles(st.x, st.y)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  <error: {exc}>")
+        return
+    if not tiles:
+        print("  (no tiles in view)")
+        return
+    by_pos = {(t.x, t.y): t for t in tiles}
+    ys = sorted({t.y for t in tiles})
+    xs = sorted({t.x for t in tiles})
+    # Header row with x values.
+    header = "       " + " ".join(f"{x:>8d}" for x in xs)
+    print(header)
+    for y in ys:
+        cells = []
+        for x in xs:
+            t = by_pos.get((x, y))
+            if t is None:
+                cells.append("        ")
+            elif x == st.x and y == st.y:
+                cells.append(f"[P{t.behavior:#04x}]")  # mark player cell
+            else:
+                cells.append(f"{t.metatile_id:03x}/{t.behavior:#04x}")
+        print(f"  y={y:3d}  " + " ".join(f"{c:>8s}" for c in cells))
+
+
 def print_map(reader: RamReader) -> None:
     _section("Map grid (VMap / BackupMapLayout)")
     try:
@@ -246,6 +346,8 @@ def print_hex_dump(reader: RamReader, addr: int, length: int) -> None:
 SECTIONS: dict[str, Callable[[RamReader], None]] = {
     "player": print_player,
     "objects": print_object_events,
+    "interactables": print_interactables,
+    "tiles": print_tiles,
     "party": print_party,
     "battle": print_battle,
     "dialogue": print_dialogue,
@@ -255,9 +357,17 @@ SECTIONS: dict[str, Callable[[RamReader], None]] = {
 }
 
 
+# Sections skipped in the default "all" dump -- still runnable explicitly.
+# ``tiles`` is a debug aid that overlaps with ``interactables`` (same grid
+# read, same prefetch) so running both doubles the HTTP cost for no win.
+_DUMP_ALL_SKIP = {"tiles"}
+
+
 def dump_all(reader: RamReader, backend: MgbaHttpBackend) -> None:
     print_header(reader, backend)
-    for fn in SECTIONS.values():
+    for name, fn in SECTIONS.items():
+        if name in _DUMP_ALL_SKIP:
+            continue
         fn(reader)
 
 

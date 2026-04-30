@@ -1,4 +1,4 @@
-"""Structured RAM reader for Pokemon FireRed (US v1.0).
+"""Structured RAM reader for Pokemon FireRed (US v1.1 / BPRE1).
 
 Public surface:
     MemoryBackend        -- protocol for raw memory access
@@ -11,13 +11,19 @@ Public surface:
     PartyMember          -- a single overworld party Pokemon
     BattlePokemonState   -- one battler slot from gBattleMons
     BattleState          -- full battle snapshot
+    WarpInfo             -- one warp destination from a map's event table
+    BgEventInfo          -- one sign / hidden item from a map's event table
+    MapEventData         -- bundled warps / BG events for a map
+    Interactable         -- classified on-screen thing the agent can act on
+    CachedMapData        -- MapStore snapshot of a single map
+    MapStore             -- in-memory cache of CachedMapData
+    load_current_map     -- one-liner that loads the reader's current map
     GameMode             -- coarse game state (overworld / battle / ...)
     BattleOutcome        -- win / loss / fled / caught / ...
 
-Target ROM: Pokemon FireRed (US), revision 1.0 (BPRE0). Other revisions
-(rev 1.1, LeafGreen, non-US) shift the fixed EWRAM/IWRAM addresses; see
-constants.py. SaveBlock1 / SaveBlock2 are reached via pointers and are
-version-stable.
+Target ROM: Pokemon FireRed (US), revision 1.1 (BPRE1) -- the single
+ROM this project targets. SaveBlock1 / SaveBlock2 are reached via
+pointers and are version-stable; ROM-symbol addresses are BPRE1.
 """
 
 from .constants import (
@@ -28,6 +34,16 @@ from .constants import (
     decode_status1,
     decode_weather,
 )
+from .map_memory import (
+    ExploredTile,
+    MapEdgeConnection,
+    MapMemory,
+    SeenInteractable,
+    WarpConnection,
+    WorldMemory,
+    compute_visible_tiles,
+)
+from .map_store import CachedMapData, MapStore, load_current_map
 from .mgba_http import MgbaHttpBackend, MgbaHttpError
 from .reader import (
     MemoryBackend,
@@ -37,6 +53,12 @@ from .reader import (
     PartyMember,
     BattlePokemonState,
     BattleState,
+    WarpInfo,
+    BgEventInfo,
+    MapConnection,
+    MapEventData,
+    Interactable,
+    TileInfo,
 )
 
 __all__ = [
@@ -49,6 +71,22 @@ __all__ = [
     "PartyMember",
     "BattlePokemonState",
     "BattleState",
+    "WarpInfo",
+    "BgEventInfo",
+    "MapEventData",
+    "MapConnection",
+    "Interactable",
+    "TileInfo",
+    "CachedMapData",
+    "MapStore",
+    "load_current_map",
+    "ExploredTile",
+    "SeenInteractable",
+    "WarpConnection",
+    "MapEdgeConnection",
+    "MapMemory",
+    "WorldMemory",
+    "compute_visible_tiles",
     "GameMode",
     "Facing",
     "MetatileBehavior",

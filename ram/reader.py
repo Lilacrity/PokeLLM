@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import dataclasses
 import struct
+from collections.abc import Iterable
 from typing import Protocol
 
 from . import constants as C
@@ -132,6 +133,113 @@ class MemoryBackend(Protocol):
     """
 
     def read_bytes(self, addr: int, length: int) -> bytes: ...
+
+
+# -----------------------------------------------------------------------------
+# Classification helpers -- used by read_map_events / read_visible_interactables
+# to turn raw byte tags into stable string kinds the planner can switch on.
+# Kept at module level so tests can exercise them directly.
+# -----------------------------------------------------------------------------
+
+
+def _classify_bg_event(kind_raw: int) -> str:
+    """Map a BgEvent.kind byte to a stable string tag."""
+    if kind_raw in C.SIGN_BG_EVENT_KINDS:
+        return "sign"
+    if kind_raw == C.BG_EVENT_KIND_HIDDEN_ITEM:
+        return "hidden_item"
+    if kind_raw == C.BG_EVENT_KIND_SECRET_BASE:
+        return "secret_base"
+    return f"raw({kind_raw})"
+
+
+# ObjectEvent graphics IDs that FRLG uses for HM-obstacle / treasure sprites.
+# These live in the overworld as ordinary ObjectEvents rather than as a
+# metatile behaviour, so the graphics_id is the canonical tell.
+_HM_OBSTACLE_GRAPHICS: dict[int, tuple[str, str]] = {
+    C.OBJ_EVENT_GFX_ITEM_BALL:        ("item_ball",     "Item Ball"),
+    C.OBJ_EVENT_GFX_CUT_TREE:         ("cut_tree",      "Cuttable Tree"),
+    C.OBJ_EVENT_GFX_ROCK_SMASH_ROCK:  ("smash_rock",    "Smashable Rock"),
+    C.OBJ_EVENT_GFX_PUSHABLE_BOULDER: ("push_boulder",  "Strength Boulder"),
+}
+
+
+def _classify_object_event(graphics_id: int, trainer_type: int) -> tuple[str, str]:
+    """Classify an ObjectEvent slot by graphics_id / trainer_type.
+
+    Returns ``(kind, label)``. The HM-obstacle / item-ball sprites take
+    priority over trainer classification: a Cuttable Tree graphic with a
+    non-zero trainer_type (which does happen in a couple of spots) is
+    still a tree.
+    """
+    obstacle = _HM_OBSTACLE_GRAPHICS.get(graphics_id)
+    if obstacle is not None:
+        kind, label = obstacle
+        return kind, label
+    if trainer_type != 0:
+        return "trainer", "Trainer"
+    return "npc", "NPC"
+
+
+# Metatile behaviours that the player can "press A against" from an adjacent
+# tile. These aren't ObjectEvents -- they're baked into the tileset, so they
+# only surface when you scan the metatile grid. The canonical FRLG examples
+# are the PokeCenter healing counter (0x80) and the in-room PC (0x83) --
+# both the user's main motivation for adding this pass.
+_INTERACTABLE_TILE_BEHAVIORS: dict[int, tuple[str, str]] = {
+    int(C.MetatileBehavior.COUNTER):             ("counter",   "Counter (heal / shop)"),
+    int(C.MetatileBehavior.BOOKSHELF):           ("bookshelf", "Bookshelf"),
+    int(C.MetatileBehavior.POKEMART_SHELF):      ("pokemart_shelf", "PokeMart Shelf"),
+    int(C.MetatileBehavior.PC):                  ("pc",        "PC"),
+    int(C.MetatileBehavior.SIGNPOST):            ("signpost",  "Signpost"),
+    int(C.MetatileBehavior.REGION_MAP):          ("region_map", "Region Map"),
+    int(C.MetatileBehavior.TELEVISION):          ("television", "Television"),
+    # Building signs (POKEMON_CENTER_SIGN / POKEMART_SIGN): functionally
+    # identical to any other readable sign -- you press A and a dialogue
+    # fires. We classify them under the generic ``sign`` kind so they
+    # share the renderer's "sign" treatment (cyan dot, no special base
+    # colour). The descriptive label still makes it clear which building
+    # the sign belongs to.
+    int(C.MetatileBehavior.POKEMON_CENTER_SIGN): ("sign",      "Pokemon Center Sign"),
+    int(C.MetatileBehavior.POKEMART_SIGN):       ("sign",      "PokeMart Sign"),
+}
+
+
+def _classify_tile_behavior(behavior: int) -> tuple[str, str] | None:
+    """Return (kind, label) for an A-pressable tile behaviour, or None."""
+    return _INTERACTABLE_TILE_BEHAVIORS.get(behavior)
+
+
+def _cluster_warps_4adjacent(warps: list) -> list[list]:
+    """Split warps into 4-adjacent (Manhattan distance 1) clusters.
+
+    Two warps to the same destination map that sit next to each other
+    are the same physical doorway and collapse to one Interactable;
+    two warps to the same destination map that sit far apart (e.g. two
+    different staircases both leading to F2) stay as separate
+    interactables. Standard flood-fill on the 4-neighbour graph.
+    """
+    clusters: list[list] = []
+    remaining = list(warps)
+    while remaining:
+        seed = remaining.pop()
+        cluster = [seed]
+        coords_in_cluster: set[tuple[int, int]] = {(seed.x, seed.y)}
+        while True:
+            grew = False
+            for w in list(remaining):
+                if any(
+                    abs(w.x - cx) + abs(w.y - cy) == 1
+                    for cx, cy in coords_in_cluster
+                ):
+                    cluster.append(w)
+                    coords_in_cluster.add((w.x, w.y))
+                    remaining.remove(w)
+                    grew = True
+            if not grew:
+                break
+        clusters.append(cluster)
+    return clusters
 
 
 # -----------------------------------------------------------------------------
@@ -251,6 +359,106 @@ class BattleState:
     weather_text: str
     current_move: int
     current_move_name: str
+    # Battle-type classification -- the bits the agent planner branches on.
+    is_wild: bool
+    is_trainer: bool
+    is_double: bool
+    is_catchable: bool        # wild and not blocked by Safari / tutorial / etc.
+    battle_type_flags: int    # raw gBattleTypeFlags, for anything else
+    trainer_opponent_id: int  # gTrainerBattleOpponent_A, 0 outside trainer fights
+
+
+@dataclasses.dataclass(frozen=True)
+class WarpInfo:
+    """One entry from the current map's WarpEvent array (ROM data)."""
+
+    x: int                    # tile coord, SaveBlock1 space (no border offset)
+    y: int
+    dest_map_group: int
+    dest_map_num: int
+    dest_warp_id: int
+
+
+@dataclasses.dataclass(frozen=True)
+class BgEventInfo:
+    """One entry from the current map's BgEvent array (ROM data)."""
+
+    x: int                    # tile coord, SaveBlock1 space
+    y: int
+    kind: str                 # "sign" | "hidden_item" | "secret_base" | f"raw({n})"
+    kind_raw: int
+    elevation: int
+    # union payload: ROM script pointer for signs, packed hidden-item u32 for
+    # hidden items. Left raw for callers who need it.
+    data: int
+
+
+@dataclasses.dataclass(frozen=True)
+class MapEventData:
+    """Static map-event tables read once per map visit (walked from gMapHeader)."""
+
+    warps: list[WarpInfo]
+    bg_events: list[BgEventInfo]
+    object_event_count: int   # count of ObjectEventTemplates the map defines
+
+
+@dataclasses.dataclass(frozen=True)
+class MapConnection:
+    """One entry from the current map's MapConnections table (ROM data).
+
+    Map connections are seamless edge-to-edge links between maps --
+    e.g. walking off the east edge of Route 1 puts you in Viridian City
+    without any warp event ever firing. The engine keeps both maps'
+    grids loaded and translates coordinates across the shared edge.
+
+    Fields are reproduced straight from the ``struct MapConnection``:
+
+    * ``direction``: one of ``C.CONNECTION_{SOUTH,NORTH,WEST,EAST,DIVE,EMERGE}``.
+    * ``offset``: signed shift of the connected map's origin along the
+      shared axis (tiles). Only meaningful for the four cardinal
+      connections; DIVE/EMERGE ignore it.
+    * ``dest_map_group`` / ``dest_map_num``: the connected map's key.
+    """
+
+    direction: int
+    offset: int
+    dest_map_group: int
+    dest_map_num: int
+
+
+@dataclasses.dataclass(frozen=True)
+class TileInfo:
+    """Decoded metatile cell in the player's visible window.
+
+    ``x`` / ``y`` are SaveBlock1 / logical coords. ``behavior`` is the
+    9-bit metatile behavior byte (compare to ``MetatileBehavior``).
+    Surfaced for probing -- the planner normally goes through
+    ``Interactable`` entries instead.
+    """
+
+    x: int
+    y: int
+    metatile_id: int
+    behavior: int
+    collision: int
+    elevation: int
+
+
+@dataclasses.dataclass(frozen=True)
+class Interactable:
+    """A thing the agent can interact with in the visible screen area.
+
+    Coordinates are in SaveBlock1 / logical tile space -- the same frame as
+    ``PlayerState.x/y``. The ``kind`` field is the stable machine-readable
+    tag; ``label`` is a short human string that the planner / LLM layer
+    can show.
+    """
+
+    x: int
+    y: int
+    kind: str
+    label: str
+    details: dict  # kind-specific extras (graphics_id, dest map, script ptr, ...)
 
 
 # -----------------------------------------------------------------------------
@@ -270,6 +478,26 @@ class RamReader:
         self._backend = backend
         self._species_names: dict[int, str] | None = None
         self._move_names: dict[int, str] | None = None
+        # --- Per-map caches. Invalidated on map change via _check_map_cache.
+        # The agent tick loop only pays the per-map HTTP cost once per visit.
+        self._cached_map_key: tuple[int, int] | None = None
+        self._cached_grid: tuple[int, int, bytes] | None = None
+        self._cached_map_events: MapEventData | None = None
+        self._cached_map_connections: list[MapConnection] | None = None
+        self._cached_tileset_ptrs: tuple[int, int] | None = None
+        # --- Behavior cache, keyed by metatile_id, valid only while the
+        # active tilesets stay the same. Metatile attribute *bytes* are ROM
+        # constants, but the id->behavior mapping is per-tileset: id 0x015
+        # might be POND_WATER on a route's tileset and a plain wood plank
+        # on a PokeCenter's. ``_check_map_cache`` watches the tileset
+        # attribute base pointers and wipes this cache whenever they change,
+        # so a stale "water" entry from the previous map can't poison the
+        # next map's tiles.
+        self._behavior_cache: dict[int, int] = {}
+        # Snapshot of the tileset bases ``_behavior_cache`` was populated
+        # against. Used by ``_check_map_cache`` to detect tileset changes
+        # without doing a fresh ROM read every tick.
+        self._behavior_cache_tilesets: tuple[int, int] | None = None
 
     # --- Primitive reads ----------------------------------------------------
 
@@ -377,6 +605,11 @@ class RamReader:
         map_group = blob[C.SAVEBLOCK1_LOCATION_MAP_GROUP]
         map_num = blob[C.SAVEBLOCK1_LOCATION_MAP_NUM]
         map_layout_id = struct.unpack_from("<H", blob, C.SAVEBLOCK1_MAP_LAYOUT_ID)[0]
+
+        # read_player_state is called every tick; it's the single point where
+        # the reader reliably knows the current map, so it's the right place
+        # to drop per-map caches when the player crosses a boundary.
+        self._check_map_cache(map_group, map_num)
 
         facing = self._player_facing_from_object_events()
         party_count = self._live_party_count()
@@ -651,6 +884,9 @@ class RamReader:
                 outcome=0, outcome_text="n/a",
                 weather=0, weather_text="none",
                 current_move=0, current_move_name="-",
+                is_wild=False, is_trainer=False, is_double=False,
+                is_catchable=False,
+                battle_type_flags=0, trainer_opponent_id=0,
             )
 
         battlers_count = self.read_u8(C.ADDR_GBATTLERS_COUNT)
@@ -672,6 +908,21 @@ class RamReader:
         weather = self.read_u16(C.ADDR_GBATTLE_WEATHER)
         current_move = self.read_u16(C.ADDR_GCURRENT_MOVE)
 
+        # Trainer vs wild classification.
+        battle_type_flags = self.read_u32(C.ADDR_GBATTLE_TYPE_FLAGS)
+        is_trainer = bool(battle_type_flags & C.BATTLE_TYPE_TRAINER)
+        is_double = bool(battle_type_flags & C.BATTLE_TYPE_DOUBLE)
+        # "wild" is the absence of the trainer bit; the flags word is never
+        # zero during an active fight (BATTLE_TYPE_IS_MASTER is always set in
+        # non-link battles), so we don't need to guard on flags != 0.
+        is_wild = not is_trainer
+        is_catchable = is_wild and not (
+            battle_type_flags & C.BATTLE_TYPE_UNCATCHABLE_MASK
+        )
+        trainer_opponent_id = (
+            self.read_u16(C.ADDR_GTRAINER_BATTLE_OPPONENT_A) if is_trainer else 0
+        )
+
         return BattleState(
             active=True,
             battlers_count=battlers_count,
@@ -687,6 +938,12 @@ class RamReader:
             weather_text=C.decode_weather(weather),
             current_move=current_move,
             current_move_name=self.move_name(current_move),
+            is_wild=is_wild,
+            is_trainer=is_trainer,
+            is_double=is_double,
+            is_catchable=is_catchable,
+            battle_type_flags=battle_type_flags,
+            trainer_opponent_id=trainer_opponent_id,
         )
 
     # --- Dialogue / text ----------------------------------------------------
@@ -774,6 +1031,660 @@ class RamReader:
         collision = (cell & C.MAPGRID_COLLISION_MASK) >> C.MAPGRID_COLLISION_SHIFT
         elevation = (cell & C.MAPGRID_ELEVATION_MASK) >> C.MAPGRID_ELEVATION_SHIFT
         return metatile_id, collision, elevation
+
+    # --- Map events (warps / signs / hidden items) --------------------------
+
+    def _map_key(self) -> tuple[int, int]:
+        """(map_group, map_num) for the active map -- per-map cache key."""
+        sb1 = self._save_block1_base()
+        return (
+            self.read_u8(sb1 + C.SAVEBLOCK1_LOCATION_MAP_GROUP),
+            self.read_u8(sb1 + C.SAVEBLOCK1_LOCATION_MAP_NUM),
+        )
+
+    def _map_header_ptr(self) -> int:
+        """Pointer to the MapHeader's mapLayout / events fields (gMapHeader itself).
+
+        gMapHeader is a struct, not a pointer, so the "pointer" returned
+        here is just its address. Kept as a helper so the calling code
+        reads the same regardless of whether the engine later swaps gMapHeader
+        for a pointer-to-struct in a refactor.
+        """
+        return C.ADDR_GMAP_HEADER
+
+    def _read_rom_ptr(self, addr: int) -> int:
+        """Read a 4-byte pointer and sanity-check it lives in ROM."""
+        ptr = self.read_u32(addr)
+        if not C.is_plausible_rom_ptr(ptr):
+            raise RuntimeError(
+                f"pointer at {addr:#010x} is not a ROM address: {ptr:#010x}"
+            )
+        return ptr
+
+    def read_map_events(self) -> MapEventData:
+        """Follow gMapHeader -> events -> {warps, bg events} and return them.
+
+        Reads a bulk slab for each array rather than one struct at a time
+        -- map events are cold ROM data, and mgba-http latency dominates
+        per-request cost. Coordinate space is SaveBlock1 / logical tiles
+        (the same space the player x/y lives in) -- confirmed by how
+        WarpSetToLastHealLocation stores the raw s16 x/y straight from the
+        struct into SaveBlock1.pos without adding MAP_OFFSET.
+        """
+        events_ptr = self._read_rom_ptr(
+            self._map_header_ptr() + C.MAP_HEADER_OFFSET_EVENTS
+        )
+        hdr = self._backend.read_bytes(events_ptr, 0x14)
+        oe_count = hdr[C.MAP_EVENTS_OFFSET_OBJECT_EVENT_COUNT]
+        warp_count = hdr[C.MAP_EVENTS_OFFSET_WARP_COUNT]
+        bg_count = hdr[C.MAP_EVENTS_OFFSET_BG_EVENT_COUNT]
+
+        warps_ptr = struct.unpack_from(
+            "<I", hdr, C.MAP_EVENTS_OFFSET_WARPS_PTR
+        )[0]
+        bg_ptr = struct.unpack_from(
+            "<I", hdr, C.MAP_EVENTS_OFFSET_BG_EVENTS_PTR
+        )[0]
+
+        warps: list[WarpInfo] = []
+        if warp_count and C.is_plausible_rom_ptr(warps_ptr):
+            blob = self._backend.read_bytes(warps_ptr, warp_count * C.WARP_EVENT_SIZE)
+            for i in range(warp_count):
+                off = i * C.WARP_EVENT_SIZE
+                x = struct.unpack_from("<h", blob, off + C.WARP_EVENT_OFFSET_X)[0]
+                y = struct.unpack_from("<h", blob, off + C.WARP_EVENT_OFFSET_Y)[0]
+                warps.append(
+                    WarpInfo(
+                        x=x,
+                        y=y,
+                        dest_map_group=blob[off + C.WARP_EVENT_OFFSET_MAP_GROUP],
+                        dest_map_num=blob[off + C.WARP_EVENT_OFFSET_MAP_NUM],
+                        dest_warp_id=blob[off + C.WARP_EVENT_OFFSET_WARP_ID],
+                    )
+                )
+
+        bg_events: list[BgEventInfo] = []
+        if bg_count and C.is_plausible_rom_ptr(bg_ptr):
+            blob = self._backend.read_bytes(bg_ptr, bg_count * C.BG_EVENT_SIZE)
+            for i in range(bg_count):
+                off = i * C.BG_EVENT_SIZE
+                x = struct.unpack_from("<H", blob, off + C.BG_EVENT_OFFSET_X)[0]
+                y = struct.unpack_from("<H", blob, off + C.BG_EVENT_OFFSET_Y)[0]
+                elevation = blob[off + C.BG_EVENT_OFFSET_ELEVATION]
+                kind_raw = blob[off + C.BG_EVENT_OFFSET_KIND]
+                union = struct.unpack_from("<I", blob, off + C.BG_EVENT_OFFSET_UNION)[0]
+                bg_events.append(
+                    BgEventInfo(
+                        x=x,
+                        y=y,
+                        kind=_classify_bg_event(kind_raw),
+                        kind_raw=kind_raw,
+                        elevation=elevation,
+                        data=union,
+                    )
+                )
+
+        return MapEventData(
+            warps=warps,
+            bg_events=bg_events,
+            object_event_count=oe_count,
+        )
+
+    def read_map_connections(self) -> list[MapConnection]:
+        """Follow gMapHeader -> connections and return the raw table.
+
+        FRLG uses this for seamless map-to-map transitions: walking off
+        the edge of Route 1 puts the player into Viridian City with no
+        warp event in play. The agent needs to see these edges so maps
+        don't look like dead ends, and cross-map pathfinding has to
+        know about them when planning multi-map routes.
+
+        Bulk-reads the whole array in one HTTP call -- the table is
+        always small (0-4 entries in practice). Returns an empty list
+        for maps with no connections or a null connections pointer,
+        both of which are common for indoor maps.
+        """
+        connections_ptr = struct.unpack_from(
+            "<I",
+            self._backend.read_bytes(
+                self._map_header_ptr() + C.MAP_HEADER_OFFSET_CONNECTIONS, 4
+            ),
+        )[0]
+        if connections_ptr == 0 or not C.is_plausible_rom_ptr(connections_ptr):
+            return []
+
+        hdr = self._backend.read_bytes(connections_ptr, 0x08)
+        count = struct.unpack_from("<i", hdr, C.MAP_CONNECTIONS_OFFSET_COUNT)[0]
+        conns_ptr = struct.unpack_from(
+            "<I", hdr, C.MAP_CONNECTIONS_OFFSET_CONNS_PTR
+        )[0]
+        if count <= 0 or not C.is_plausible_rom_ptr(conns_ptr):
+            return []
+
+        blob = self._backend.read_bytes(
+            conns_ptr, count * C.MAP_CONNECTION_SIZE
+        )
+        out: list[MapConnection] = []
+        for i in range(count):
+            off = i * C.MAP_CONNECTION_SIZE
+            direction = blob[off + C.MAP_CONNECTION_OFFSET_DIRECTION]
+            offset = struct.unpack_from(
+                "<i", blob, off + C.MAP_CONNECTION_OFFSET_OFFSET
+            )[0]
+            dest_group = blob[off + C.MAP_CONNECTION_OFFSET_MAP_GROUP]
+            dest_num = blob[off + C.MAP_CONNECTION_OFFSET_MAP_NUM]
+            out.append(
+                MapConnection(
+                    direction=direction,
+                    offset=offset,
+                    dest_map_group=dest_group,
+                    dest_map_num=dest_num,
+                )
+            )
+        return out
+
+    # --- Tileset attributes / metatile behaviour ----------------------------
+
+    def read_tileset_attrs(self) -> tuple[int, int]:
+        """Return (primary_attrs_ptr, secondary_attrs_ptr) for the current map.
+
+        Both pointers address ROM u32 arrays indexed by (local) metatile
+        id. Cached per map visit via ``_cached_tileset_ptrs``; the cache
+        is cleared by ``_check_map_cache`` when the player crosses a map
+        boundary.
+
+        Side-effect: if these bases differ from ``_behavior_cache_tilesets``
+        (the tilesets the current behavior cache was populated against),
+        the behavior cache is wiped first. The cache is keyed on
+        ``metatile_id`` alone but its values are per-tileset, so a stale
+        entry from a route's tileset cannot be allowed to leak into a
+        PokeCenter's id->behavior decode -- that's exactly what made
+        non-water tiles render as water in the map viewer.
+        """
+        if self._cached_tileset_ptrs is not None:
+            return self._cached_tileset_ptrs
+
+        map_layout_ptr = self._read_rom_ptr(
+            self._map_header_ptr() + C.MAP_HEADER_OFFSET_MAP_LAYOUT
+        )
+        primary_tileset_ptr = self._read_rom_ptr(
+            map_layout_ptr + C.MAP_LAYOUT_OFFSET_PRIMARY_TILESET
+        )
+        secondary_tileset_ptr = self._read_rom_ptr(
+            map_layout_ptr + C.MAP_LAYOUT_OFFSET_SECONDARY_TILESET
+        )
+        primary_attrs = self._read_rom_ptr(
+            primary_tileset_ptr + C.TILESET_OFFSET_METATILE_ATTRS
+        )
+        secondary_attrs = self._read_rom_ptr(
+            secondary_tileset_ptr + C.TILESET_OFFSET_METATILE_ATTRS
+        )
+        new_ptrs = (primary_attrs, secondary_attrs)
+
+        if self._behavior_cache_tilesets != new_ptrs:
+            # Either tileset (or both) just changed underneath us. Drop
+            # everything keyed on the old tilesets before any caller can
+            # observe a stale entry.
+            self._behavior_cache.clear()
+            self._behavior_cache_tilesets = new_ptrs
+
+        self._cached_tileset_ptrs = new_ptrs
+        return self._cached_tileset_ptrs
+
+    def get_metatile_behavior(self, metatile_id: int) -> int:
+        """Look up the 9-bit MetatileBehavior for a metatile id on this map.
+
+        Metatile ids 0x000-0x1FF index the primary tileset's attribute array;
+        0x200+ index the secondary tileset's (with 0x200 subtracted). Returns
+        the raw integer; compare against C.MetatileBehavior members.
+
+        Cached in ``_behavior_cache``. That cache is permanent across
+        map transitions since it holds ROM data; per-map prefetch on
+        entry overwrites entries for ids actually used by the new map.
+        """
+        cached = self._behavior_cache.get(metatile_id)
+        if cached is not None:
+            return cached
+
+        primary_attrs, secondary_attrs = self.read_tileset_attrs()
+        if metatile_id < C.NUM_METATILES_IN_PRIMARY:
+            attr_addr = primary_attrs + metatile_id * 4
+        else:
+            attr_addr = secondary_attrs + (metatile_id - C.NUM_METATILES_IN_PRIMARY) * 4
+        attr = self.read_u32(attr_addr)
+        behavior = (attr & C.METATILE_ATTR_BEHAVIOR_MASK) >> C.METATILE_ATTR_BEHAVIOR_SHIFT
+        self._behavior_cache[metatile_id] = behavior
+        return behavior
+
+    def prefetch_metatile_behaviors(self, metatile_ids: Iterable[int]) -> None:
+        """Bulk-read behaviors for a specific set of metatile ids.
+
+        ``get_metatile_behavior`` on its own issues one ROM read per
+        unique metatile -- fine for a handful, death for a 15x10
+        window where mgba-http latency dominates. We collect the
+        unique ids requested, split by tileset, and issue *one* bulk
+        read per tileset covering exactly the [min_id, max_id] range.
+
+        Called at map entry from ``read_map_grid_cached`` with every
+        metatile id the map actually uses, so post-entry behavior
+        lookups are all cache hits. Ids already in ``_behavior_cache``
+        are skipped.
+        """
+        primary_needed: list[int] = []
+        secondary_needed: list[int] = []
+        for mid in metatile_ids:
+            if mid in self._behavior_cache:
+                continue
+            if mid < C.NUM_METATILES_IN_PRIMARY:
+                primary_needed.append(mid)
+            else:
+                secondary_needed.append(mid)
+        if not primary_needed and not secondary_needed:
+            return
+
+        primary_attrs, secondary_attrs = self.read_tileset_attrs()
+        mask = C.METATILE_ATTR_BEHAVIOR_MASK
+        shift = C.METATILE_ATTR_BEHAVIOR_SHIFT
+
+        def _ingest(base_addr: int, local_ids: list[int], id_offset: int) -> None:
+            if not local_ids:
+                return
+            lo = min(local_ids)
+            hi = max(local_ids)
+            blob = self._backend.read_bytes(base_addr + lo * 4, (hi - lo + 1) * 4)
+            for i in range(lo, hi + 1):
+                attr = int.from_bytes(blob[(i - lo) * 4 : (i - lo) * 4 + 4], "little")
+                self._behavior_cache[id_offset + i] = (attr & mask) >> shift
+
+        _ingest(primary_attrs, primary_needed, 0)
+        secondary_local = [mid - C.NUM_METATILES_IN_PRIMARY for mid in secondary_needed]
+        _ingest(secondary_attrs, secondary_local, C.NUM_METATILES_IN_PRIMARY)
+
+    def _check_map_cache(self, map_group: int, map_num: int) -> None:
+        """Invalidate per-map caches if the player has crossed a boundary.
+
+        Called at the top of ``read_player_state`` (the one call every
+        tick that unambiguously knows the current map). Clears the
+        per-map caches -- grid, events, tileset pointers -- and then
+        eagerly re-reads the tileset attribute bases. ``read_tileset_attrs``
+        owns behavior-cache invalidation: if the new map shares both
+        tilesets with the previous one (very common -- every PokeCenter
+        uses the same interior tileset, every outdoor town shares the
+        regional tileset) the behavior cache survives and we save a
+        full re-prefetch; if either tileset changed, ``read_tileset_attrs``
+        wipes the behavior cache so no stale id->behavior entry can leak
+        across the boundary. Pre-overworld / mid-transition the read can
+        fail, in which case we conservatively drop the cache.
+        """
+        new_key = (map_group, map_num)
+        if self._cached_map_key == new_key:
+            return
+        self._cached_map_key = new_key
+        self._cached_grid = None
+        self._cached_map_events = None
+        self._cached_map_connections = None
+        self._cached_tileset_ptrs = None
+
+        try:
+            self.read_tileset_attrs()
+        except Exception:  # noqa: BLE001
+            self._behavior_cache.clear()
+            self._behavior_cache_tilesets = None
+
+    def invalidate_map_cache(self) -> None:
+        """Manual reset of every cache the reader owns.
+
+        ``_check_map_cache`` handles routine invalidation on map
+        change. This method is the hammer for cases where a caller
+        knows ROM has been reloaded or wants a fully cold reader --
+        it additionally wipes ``_behavior_cache``, which the automatic
+        path keeps.
+        """
+        self._cached_map_key = None
+        self._cached_grid = None
+        self._cached_map_events = None
+        self._cached_map_connections = None
+        self._cached_tileset_ptrs = None
+        self._behavior_cache.clear()
+        self._behavior_cache_tilesets = None
+
+    def read_map_grid_cached(self) -> tuple[int, int, bytes]:
+        """Return the current map's grid, reading once per visit.
+
+        On first call per map this also prefetches behaviors for every
+        metatile id actually used by the grid -- one or two bulk ROM
+        reads -- so subsequent ``get_metatile_behavior_cached`` calls
+        are pure dict lookups.
+        """
+        if self._cached_grid is not None:
+            return self._cached_grid
+        self._cached_grid = self.read_map_grid()
+        xsize, ysize, grid = self._cached_grid
+        # Collect every metatile id the grid actually uses, then hand
+        # them to the targeted prefetch. In practice a map uses a small
+        # subset of the 1024 possible ids, so the two bulk reads cover
+        # a tight range rather than the full 4 KiB attribute arrays.
+        mask = C.MAPGRID_METATILE_ID_MASK
+        unique_ids: set[int] = set()
+        for i in range(0, len(grid), 2):
+            cell = grid[i] | (grid[i + 1] << 8)
+            unique_ids.add(cell & mask)
+        self.prefetch_metatile_behaviors(unique_ids)
+        return self._cached_grid
+
+    def read_map_events_cached(self) -> MapEventData:
+        """Return the current map's event tables, reading once per visit."""
+        if self._cached_map_events is None:
+            self._cached_map_events = self.read_map_events()
+        return self._cached_map_events
+
+    def read_map_connections_cached(self) -> list[MapConnection]:
+        """Return the current map's connection table, reading once per visit."""
+        if self._cached_map_connections is None:
+            self._cached_map_connections = self.read_map_connections()
+        return self._cached_map_connections
+
+    def get_metatile_behavior_cached(self, metatile_id: int) -> int:
+        """Pure dict lookup once the per-map grid prefetch has run.
+
+        Falls back to a single ROM read for ids not yet cached -- e.g.
+        the very first call on a map before ``read_map_grid_cached``,
+        or unit tests that bypass the grid path.
+        """
+        cached = self._behavior_cache.get(metatile_id)
+        if cached is not None:
+            return cached
+        return self.get_metatile_behavior(metatile_id)
+
+    # --- Visible tiles / interactables --------------------------------------
+
+    def read_visible_tiles(
+        self,
+        player_x: int | None = None,
+        player_y: int | None = None,
+    ) -> list[TileInfo]:
+        """Decode every cell in the 15x10 visible window with its behavior.
+
+        One map-grid bulk read plus one prefetch bulk per used tileset --
+        typically three HTTP round trips total on a cold cache. Primarily
+        a probe / debug aid (compare what a tile *actually* shows for
+        behavior against expectations from the ROM).
+        """
+        if player_x is None or player_y is None:
+            st = self.read_player_state()
+            player_x, player_y = st.x, st.y
+        min_x, max_x = player_x - 7, player_x + 7
+        min_y, max_y = player_y - 5, player_y + 5
+
+        xsize, ysize, grid = self.read_map_grid_cached()
+        logical_w = max(0, xsize - C.MAP_OFFSET_W)
+        logical_h = max(0, ysize - C.MAP_OFFSET_H)
+        decoded: list[tuple[int, int, int, int, int]] = []
+        for ly in range(min_y, max_y + 1):
+            for lx in range(min_x, max_x + 1):
+                # Stay inside the logical (non-border) map. The 7-tile
+                # pad around each edge is map-rendering filler and its
+                # collision bits are unrelated to gameplay.
+                if not (0 <= lx < logical_w and 0 <= ly < logical_h):
+                    continue
+                gx = lx + C.MAP_OFFSET
+                gy = ly + C.MAP_OFFSET
+                if not (0 <= gx < xsize and 0 <= gy < ysize):
+                    continue
+                mid, col, ele = self.tile_cell_at(grid, xsize, gx, gy)
+                decoded.append((lx, ly, mid, col, ele))
+
+        out: list[TileInfo] = []
+        for lx, ly, mid, col, ele in decoded:
+            try:
+                behavior = self.get_metatile_behavior_cached(mid)
+            except Exception:  # noqa: BLE001
+                behavior = -1
+            out.append(
+                TileInfo(
+                    x=lx,
+                    y=ly,
+                    metatile_id=mid,
+                    behavior=behavior,
+                    collision=col,
+                    elevation=ele,
+                )
+            )
+        return out
+
+    def read_visible_interactables(
+        self,
+        player_x: int | None = None,
+        player_y: int | None = None,
+    ) -> list[Interactable]:
+        """Enumerate every interactable thing on screen right now.
+
+        Combines four sources, all in SaveBlock1 / logical tile space:
+          * Active object events (NPCs, item balls, and the FRLG
+            HM-obstacle sprites -- cuttable tree, smashable rock,
+            pushable boulder -- which the engine models as ObjectEvents
+            rather than metatile behaviours).
+          * Map-header BgEvents (signs, hidden items).
+          * Map-header WarpEvents (doors, stairs, cave mouths), collapsed
+            to one representative tile per destination -- FRLG models
+            every door as a 2-3 tile strip where each tile points at the
+            same warp.
+          * Metatile behaviours that press-A triggers, like the Pokemon
+            Center healing counter (COUNTER = 0x80) and in-room PC
+            (PC = 0x83). These are tileset-baked, so they only surface
+            when we actually scan the grid.
+
+        The visible window is a 15x10 tile box centred on the player --
+        matching the roughly-visible region on a GBA screen. Pass
+        ``player_x`` / ``player_y`` to skip the SaveBlock1 re-read when
+        the caller already has them.
+        """
+        if player_x is None or player_y is None:
+            st = self.read_player_state()
+            player_x, player_y = st.x, st.y
+        events = self.read_map_events_cached()
+
+        # GBA screen renders 15 tiles wide by ~10 tiles tall, but we widen
+        # the vertical sweep to 11 (5 above, 5 below) so the agent picks
+        # up tall interactables -- the PokeCenter PC sits at the back wall
+        # and is one tile off the top of the strict 15x10 view from the
+        # entrance, which made it invisible to the agent until the player
+        # walked another step north. ram_probe.print_object_events uses
+        # the same window.
+        min_x, max_x = player_x - 7, player_x + 7
+        min_y, max_y = player_y - 5, player_y + 5
+
+        def in_window(ix: int, iy: int) -> bool:
+            return min_x <= ix <= max_x and min_y <= iy <= max_y
+
+        out: list[Interactable] = []
+
+        # Find the counter NPC(s) on the full active object event list,
+        # NOT just the visible ones. The counter strip near the NPC has
+        # many COUNTER metatiles, but only the ones the player can stand
+        # facing directly are reachable -- the player can't walk onto a
+        # counter tile, they press A from the floor tile in front of the
+        # NPC. Counter NPCs can sit on any side of the strip (Mart
+        # clerks often have the counter to their east or west, gym /
+        # quiz-show staff are similar), so we collect every COUNTER tile
+        # 4-adjacent to a Nurse/Clerk and treat each as interactable.
+        # Multiple Nurses/Clerks per map are allowed; gather their full
+        # neighbour sets.
+        all_slots = self.read_object_events()
+        nurse_counter_xys: set[tuple[int, int]] = set()
+        clerk_counter_xys: set[tuple[int, int]] = set()
+        _CARDINAL_DELTAS = ((0, -1), (0, 1), (-1, 0), (1, 0))
+        for slot in all_slots:
+            if slot.is_player or slot.invisible:
+                continue
+            if slot.graphics_id == C.OBJ_EVENT_GFX_NURSE:
+                target = nurse_counter_xys
+            elif slot.graphics_id == C.OBJ_EVENT_GFX_CLERK:
+                target = clerk_counter_xys
+            else:
+                continue
+            for dx, dy in _CARDINAL_DELTAS:
+                target.add((slot.x + dx, slot.y + dy))
+
+        # Object events: skip the player (slot 0 / is_player) and anything
+        # off screen or invisible. gObjectEvents stores coords in
+        # border-included space, but read_object_events already subtracts
+        # MAP_OFFSET so slot.x/slot.y are in logical space.
+        for slot in all_slots:
+            if slot.is_player or slot.invisible or slot.off_screen:
+                continue
+            lx = slot.x
+            ly = slot.y
+            if not in_window(lx, ly):
+                continue
+            kind, label = _classify_object_event(slot.graphics_id, slot.trainer_type)
+            out.append(
+                Interactable(
+                    x=lx,
+                    y=ly,
+                    kind=kind,
+                    label=label,
+                    details={
+                        "slot": slot.slot,
+                        "graphics_id": slot.graphics_id,
+                        "movement_type": slot.movement_type,
+                        "trainer_type": slot.trainer_type,
+                        "local_id": slot.local_id,
+                        "facing": slot.facing.name,
+                    },
+                )
+            )
+
+        for bg in events.bg_events:
+            if not in_window(bg.x, bg.y):
+                continue
+            label = {
+                "sign": "Sign",
+                "hidden_item": "Hidden Item",
+                "secret_base": "Secret Base Entrance",
+            }.get(bg.kind, f"BgEvent({bg.kind_raw})")
+            out.append(
+                Interactable(
+                    x=bg.x,
+                    y=bg.y,
+                    kind=bg.kind,
+                    label=label,
+                    details={
+                        "kind_raw": bg.kind_raw,
+                        "elevation": bg.elevation,
+                        # Signs stash a ROM script pointer; hidden items stash
+                        # a packed u32 with the item / flag / quantity.
+                        "data": bg.data,
+                    },
+                )
+            )
+
+        # Warps: collapse multi-tile door strips into one Interactable per
+        # destination. FRLG door mats are typically 2 tiles wide, but the
+        # *same* mat often has different ``warp_id`` values per tile so
+        # the player arrives back on the matching outdoor tile after
+        # exiting -- keying the collapse on (dest_map, warp_id) leaks
+        # through as two adjacent warp markers. Group by destination MAP
+        # only and then split each map-group into 4-adjacency clusters
+        # so a "two staircases on the same floor both go to F2" case
+        # still surfaces as two distinct warps. Each cluster reports its
+        # full tile list plus a float centroid in ``details`` so renderers
+        # can place a marker between the tiles rather than biased onto
+        # one of them.
+        warps_by_dest_map: dict[tuple[int, int], list["WarpInfo"]] = {}
+        for warp in events.warps:
+            if not in_window(warp.x, warp.y):
+                continue
+            warps_by_dest_map.setdefault(
+                (warp.dest_map_group, warp.dest_map_num), []
+            ).append(warp)
+        for group in warps_by_dest_map.values():
+            for cluster in _cluster_warps_4adjacent(group):
+                cx = sum(w.x for w in cluster) / len(cluster)
+                cy = sum(w.y for w in cluster) / len(cluster)
+                # Canonical tile: closest to the centroid (ties broken by
+                # smallest (y, x) so the choice is deterministic).
+                canon = min(
+                    cluster,
+                    key=lambda w: ((w.x - cx) ** 2 + (w.y - cy) ** 2, w.y, w.x),
+                )
+                out.append(
+                    Interactable(
+                        x=canon.x,
+                        y=canon.y,
+                        kind="warp",
+                        label=f"Warp -> ({canon.dest_map_group}, {canon.dest_map_num})",
+                        details={
+                            "dest_map_group": canon.dest_map_group,
+                            "dest_map_num": canon.dest_map_num,
+                            "dest_warp_id": canon.dest_warp_id,
+                            # Each tile keeps its own warp_id since
+                            # different tiles in a mat can map to
+                            # different arrival warps on the dest.
+                            "tiles": [
+                                (w.x, w.y, w.dest_warp_id) for w in cluster
+                            ],
+                            "centroid": (cx, cy),
+                        },
+                    )
+                )
+
+        # Tile-behaviour sweep: counter, PC, bookshelf, signposts, etc.
+        # All three inputs (grid, behavior lookup) come from caches that
+        # were populated on map entry, so this sweep is pure Python with
+        # zero HTTP. Skip silently if we can't get at the grid (e.g.
+        # pre-overworld).
+        try:
+            map_grid = self.read_map_grid_cached()
+        except Exception:  # noqa: BLE001
+            map_grid = None
+        if map_grid is not None:
+            xsize, ysize, grid = map_grid
+            counter_value = int(C.MetatileBehavior.COUNTER)
+            for ly in range(min_y, max_y + 1):
+                for lx in range(min_x, max_x + 1):
+                    gx = lx + C.MAP_OFFSET
+                    gy = ly + C.MAP_OFFSET
+                    if not (0 <= gx < xsize and 0 <= gy < ysize):
+                        continue
+                    mid, _col, _ele = self.tile_cell_at(grid, xsize, gx, gy)
+                    try:
+                        behavior = self.get_metatile_behavior_cached(mid)
+                    except Exception:  # noqa: BLE001
+                        continue
+                    tile_entry = _classify_tile_behavior(behavior)
+                    if tile_entry is None:
+                        continue
+                    kind, label = tile_entry
+                    # Counter tiles (0x80): emit only the ones the player
+                    # can actually press A on -- the COUNTER tiles that
+                    # sit 4-adjacent to a Nurse/Clerk NPC. Decorative
+                    # counter tiles further down the strip are unreachable
+                    # (the NPC isn't behind them) and would just clutter
+                    # the agent's interactable list.
+                    if behavior == counter_value:
+                        if (lx, ly) in nurse_counter_xys:
+                            kind = "heal_counter"
+                            label = "PokeCenter Heal Counter"
+                        elif (lx, ly) in clerk_counter_xys:
+                            kind = "shop_counter"
+                            label = "Mart Shop Counter"
+                        else:
+                            continue
+                    out.append(
+                        Interactable(
+                            x=lx,
+                            y=ly,
+                            kind=kind,
+                            label=label,
+                            details={
+                                "metatile_id": mid,
+                                "behavior": behavior,
+                            },
+                        )
+                    )
+
+        return out
 
     # --- SaveBlock2 odds and ends ------------------------------------------
 

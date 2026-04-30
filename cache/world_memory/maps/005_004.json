@@ -1,0 +1,2202 @@
+{
+  "map_group": 5,
+  "map_num": 4,
+  "width": 15,
+  "height": 10,
+  "explored_tiles": [
+    {
+      "x": 0,
+      "y": 3,
+      "metatile_id": 696,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "metatile_id": 697,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "metatile_id": 700,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "metatile_id": 700,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "metatile_id": 664,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "metatile_id": 700,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "metatile_id": 700,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "metatile_id": 701,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 3,
+      "metatile_id": 709,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 3,
+      "metatile_id": 702,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "metatile_id": 696,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "metatile_id": 675,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "metatile_id": 703,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 4,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "metatile_id": 720,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "metatile_id": 721,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "metatile_id": 649,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "metatile_id": 650,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "metatile_id": 651,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 5,
+      "metatile_id": 757,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 5,
+      "metatile_id": 765,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 5,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "metatile_id": 728,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "metatile_id": 729,
+      "behavior": 106,
+      "collision": 0,
+      "elevation": 4,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 4,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "metatile_id": 657,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "metatile_id": 658,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 6,
+      "metatile_id": 659,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 6,
+      "metatile_id": 668,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 6,
+      "metatile_id": 669,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 6,
+      "metatile_id": 719,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 6,
+      "metatile_id": 757,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "metatile_id": 736,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "metatile_id": 737,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "metatile_id": 665,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "metatile_id": 666,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "metatile_id": 667,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 7,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 7,
+      "metatile_id": 676,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 7,
+      "metatile_id": 677,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 7,
+      "metatile_id": 709,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 7,
+      "metatile_id": 765,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "metatile_id": 673,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "metatile_id": 706,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "metatile_id": 707,
+      "behavior": 101,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 8,
+      "metatile_id": 708,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "metatile_id": 641,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 8,
+      "metatile_id": 675,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 8,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 8,
+      "metatile_id": 703,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 8,
+      "metatile_id": 674,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 3,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 6,
+      "y": 9,
+      "metatile_id": 26,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "metatile_id": 27,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 8,
+      "y": 9,
+      "metatile_id": 28,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 9,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 10,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 11,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 12,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 13,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 14,
+      "y": 9,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 36,
+      "last_seen_step": 44
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "metatile_id": 688,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "metatile_id": 660,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "metatile_id": 717,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "metatile_id": 718,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "metatile_id": 689,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "metatile_id": 690,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "metatile_id": 691,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "metatile_id": 656,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "metatile_id": 867,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "metatile_id": 692,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "metatile_id": 693,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "metatile_id": 661,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 12,
+      "y": 2,
+      "metatile_id": 710,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 14,
+      "y": 2,
+      "metatile_id": 694,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 38,
+      "last_seen_step": 41
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "metatile_id": 672,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "metatile_id": 723,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "metatile_id": 713,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "metatile_id": 714,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "metatile_id": 646,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "metatile_id": 645,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "metatile_id": 662,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "metatile_id": 663,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "metatile_id": 678,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 40
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "metatile_id": 680,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "metatile_id": 653,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "metatile_id": 715,
+      "behavior": 129,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "metatile_id": 716,
+      "behavior": 129,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "metatile_id": 681,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "metatile_id": 682,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "metatile_id": 683,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "metatile_id": 654,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "metatile_id": 684,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "metatile_id": 685,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 11,
+      "y": 1,
+      "metatile_id": 98,
+      "behavior": 131,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 12,
+      "y": 1,
+      "metatile_id": 670,
+      "behavior": 133,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "metatile_id": 671,
+      "behavior": 133,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    },
+    {
+      "x": 14,
+      "y": 1,
+      "metatile_id": 686,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 39,
+      "last_seen_step": 41
+    }
+  ],
+  "seen_interactables": [
+    {
+      "x": 12,
+      "y": 5,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "kind": "warp",
+      "label": "Warp -> (3, 1)",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "kind": "warp",
+      "label": "Warp -> (5, 5)",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "kind": "heal_counter",
+      "label": "PokeCenter Heal Counter",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 11,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 12,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 13,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 14,
+      "y": 10,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 0,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 1,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 3,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 4,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 5,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 6,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 11,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 12,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 13,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 14,
+      "y": 11,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 0,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 1,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 3,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 4,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 5,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 6,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 11,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 12,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 13,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 14,
+      "y": 12,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 0,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 1,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 3,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 5,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 6,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 8,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 9,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 10,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 11,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 12,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 13,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 14,
+      "y": 13,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 36,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 38,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 39,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "kind": "bookshelf",
+      "label": "Bookshelf",
+      "first_seen_step": 39,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 11,
+      "y": 1,
+      "kind": "pc",
+      "label": "PC",
+      "first_seen_step": 39,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 12,
+      "y": 1,
+      "kind": "region_map",
+      "label": "Region Map",
+      "first_seen_step": 39,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "kind": "region_map",
+      "label": "Region Map",
+      "first_seen_step": 39,
+      "interacted": false,
+      "interaction_result": null
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "kind": "npc",
+      "label": "NPC",
+      "first_seen_step": 41,
+      "interacted": false,
+      "interaction_result": null
+    }
+  ],
+  "known_warps": [
+    {
+      "from_map": [
+        5,
+        4
+      ],
+      "from_tile": [
+        7,
+        8
+      ],
+      "to_map": [
+        3,
+        1
+      ],
+      "to_warp_id": 0,
+      "used": false
+    },
+    {
+      "from_map": [
+        5,
+        4
+      ],
+      "from_tile": [
+        1,
+        6
+      ],
+      "to_map": [
+        5,
+        5
+      ],
+      "to_warp_id": 0,
+      "used": false
+    }
+  ],
+  "connections": []
+}

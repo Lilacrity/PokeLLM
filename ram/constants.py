@@ -581,12 +581,18 @@ OBJ_EVENT_GFX_CUT_TREE          = 95
 OBJ_EVENT_GFX_ROCK_SMASH_ROCK   = 96
 OBJ_EVENT_GFX_PUSHABLE_BOULDER  = 97
 
-# Interactable-counter staff: Nurse Joy (PokeCenter heal) and Clerk
-# (Mart shop). Each one sits behind exactly one COUNTER tile, and that
-# tile is the only A-pressable counter on the row -- the rest are pure
-# decoration, the player can't reach the NPC behind them.
-OBJ_EVENT_GFX_NURSE             = 64
-OBJ_EVENT_GFX_CLERK             = 68
+# Counter-staff sprites: Nurse Joy (PokeCenter heal) and Clerk (Mart
+# shop). Previously used by the interactables pass to disambiguate
+# COUNTER tiles into heal_counter / shop_counter variants. That logic
+# was removed when the tile-behaviour sweep was narrowed to ledges /
+# water / PC -- the NPC behind a counter now surfaces through the
+# ObjectEvent pass (kind="npc") at the NPC's own tile, and the planner
+# is expected to route the agent to the adjacent counter tile one step
+# in the NPC's facing direction once A* is implemented. Left in place
+# but commented for now; remove after the planner ships and we've
+# verified nothing else looks them up.
+# OBJ_EVENT_GFX_NURSE             = 64
+# OBJ_EVENT_GFX_CLERK             = 68
 
 
 # -----------------------------------------------------------------------------
@@ -717,6 +723,35 @@ class MetatileBehavior(enum.IntEnum):
     TELEVISION = 0x86
     POKEMON_CENTER_SIGN = 0x87
     POKEMART_SIGN = 0x88
+    # 0x89-0xA3: the rest of FRLG's interactive-furniture behaviours.
+    # Each has a dedicated MetatileBehavior_Is* check in
+    # pret/src/metatile_behavior.c, which is what scripts use to fire
+    # press-A dialogue for these tiles.
+    CABINET = 0x89
+    KITCHEN = 0x8A
+    DRESSER = 0x8B
+    SNACKS = 0x8C
+    CABLE_CLUB_WIRELESS_MONITOR = 0x8D
+    BATTLE_RECORDS = 0x8E
+    QUESTIONNAIRE = 0x8F
+    FOOD = 0x90
+    INDIGO_PLATEAU_SIGN_1 = 0x91
+    INDIGO_PLATEAU_SIGN_2 = 0x92
+    BLUEPRINTS = 0x93
+    PAINTING = 0x94
+    POWER_PLANT_MACHINE = 0x95
+    TELEPHONE = 0x96
+    COMPUTER = 0x97
+    ADVERTISING_POSTER = 0x98
+    FOOD_SMELLS_TASTY = 0x99
+    TRASH_BIN = 0x9A
+    CUP = 0x9B
+    BLINKING_LIGHTS = 0x9E
+    NEATLY_LINED_UP_TOOLS = 0x9F
+    IMPRESSIVE_MACHINE = 0xA0
+    VIDEO_GAME = 0xA1
+    BURGLARY = 0xA2
+    TRAINER_TOWER_MONITOR = 0xA3
 
 
 # Which behaviours are walkable from a given direction. This is a starting

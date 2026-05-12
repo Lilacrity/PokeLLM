@@ -28,8 +28,8 @@ Colour key
     blue            surfable water (POND/DEEP/OCEAN/CURRENT/...)
     brown + arrow   directional ledge jump (arrow points the jump way)
     cyan square     PC
-    pink dot        PokeCenter heal counter (overlaid on top of gold)
-    gold square     generic counter (Mart shop counter has cyan-dot too)
+    gold square     counter (Pokecenter / Mart / etc -- the agent reads
+                    the NPC sprite behind it to know which kind)
     distinct walls  bookshelf / TV / signpost / mart shelf / region map
     orange dot      warp (destination known; centred on door-strip
                     centroid so 2-tile mats render between the tiles)
@@ -367,18 +367,11 @@ class MapViewer:
                 fill="", outline="#e8d44c", width=1,
             )
 
-        # Interactables (warps / signs / NPCs / heal counters / HM obstacles).
-        # Tile-behaviour kinds (pc, bookshelf, signpost, shop_counter, ...)
-        # already paint distinct base-tile colours from `tile_color`, so we
-        # skip dot overlays for those -- heal_counter is the exception
-        # because it shares COUNTER (gold) base colour with shop_counter
-        # and the user explicitly asked for the heal counter to be called
-        # out distinctly.
-        _DECORATED_TILE_KINDS = {
-            "pc", "bookshelf", "pokemart_shelf", "signpost", "region_map",
-            "television",
-            "shop_counter", "counter",  # plain counters keep their gold base only
-        }
+        # Interactables (warps / signs / NPCs / HM obstacles).
+        # Tile-behaviour kinds (pc, water, ledge) already paint distinct
+        # base-tile colours (and an arrow for ledges) from `tile_color`,
+        # so we skip dot overlays for those.
+        _DECORATED_TILE_KINDS = {"pc", "water", "ledge"}
         inters = getattr(self, "_cached_interactables", []) or []
         for inter in inters:
             if inter.kind in _DECORATED_TILE_KINDS:
@@ -403,25 +396,50 @@ class MapViewer:
                 dot = "#4fd1e0"
             elif inter.kind in ("npc", "trainer"):
                 dot = "#f2e34c"
-            elif inter.kind == "heal_counter":
-                dot = "#ff70a0"  # bright pink overlaid on the gold counter
             else:
                 dot = "#c0c0c0"
             self.canvas.create_oval(
                 cx - r, cy - r, cx + r, cy + r, fill=dot, outline=""
             )
 
-        # Persistent markers for seen-but-offscreen warps / signs.
+        # Persistent markers for seen-but-offscreen interactables.
+        # Warps / signs / hidden items are static map data so they stay
+        # forever. NPCs, trainers, item balls, and HM obstacles
+        # (cuttable trees, smashable rocks, push-boulders) are dynamic
+        # but persist at their last-seen position so the agent doesn't
+        # treat the tile as freshly walkable when out of view -- they
+        # still physically occupy that square until proven otherwise.
+        _PERSISTENT_KINDS = {
+            "warp", "sign", "hidden_item",
+            "npc", "trainer",
+            "item_ball", "cut_tree", "smash_rock", "push_boulder",
+        }
+        _PERSISTENT_DOT = {
+            "warp":         "#ff8c1a",
+            "sign":         "#4fd1e0",
+            "hidden_item":  "#4fd1e0",
+            "npc":          "#f2e34c",
+            "trainer":      "#f2e34c",
+            "item_ball":    "#c0c0c0",
+            "cut_tree":     "#4a8a3a",
+            "smash_rock":   "#8a6038",
+            "push_boulder": "#8a6038",
+        }
         visible_keys = {(i.x, i.y) for i in inters}
         for key, seen in mem.seen_interactables.items():
             if key in visible_keys:
                 continue
-            if seen.kind not in ("warp", "sign", "hidden_item"):
+            if seen.kind not in _PERSISTENT_KINDS:
+                continue
+            # Item balls / cut trees / smash rocks become passable once
+            # the agent has interacted (collected / cut / smashed). Drop
+            # the marker for those -- the tile really is open now.
+            if seen.kind in ("item_ball", "cut_tree", "smash_rock") and seen.interacted:
                 continue
             x0, y0 = sx(seen.x), sy(seen.y)
             cx, cy = x0 + TILE_PX // 2, y0 + TILE_PX // 2
             r = max(1, TILE_PX // 4)
-            dot = "#ff8c1a" if seen.kind == "warp" else "#4fd1e0"
+            dot = _PERSISTENT_DOT.get(seen.kind, "#c0c0c0")
             self.canvas.create_oval(
                 cx - r, cy - r, cx + r, cy + r, fill=dot, outline=""
             )

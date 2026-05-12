@@ -66,6 +66,13 @@ class SeenInteractable:
     classification at that tick); warps and signs are naturally
     persistent since they're static map data. ``interacted`` flips to
     true once the agent has pressed A on this tile.
+
+    ``local_id`` is the ObjectEvent local id (1-based per-map id from
+    the map header's ObjectEventTemplate array) for entries sourced
+    from ``gObjectEvents`` -- used by ``update_visibility`` to track
+    NPC movement and migrate the entry from its prior tile to the new
+    one. ``None`` for static interactables (warps, signs, tile
+    behaviours) where the (x, y) key is itself the stable identity.
     """
 
     x: int
@@ -75,6 +82,7 @@ class SeenInteractable:
     first_seen_step: int
     interacted: bool
     interaction_result: str | None
+    local_id: int | None = None
 
 
 @dataclasses.dataclass(frozen=True)
@@ -189,8 +197,31 @@ class MapMemory:
                     last_seen_step=step,
                 )
 
+        # First pass: migrate any moving NPC entries. An ObjectEvent
+        # entry is identified by its local_id (stable per-map). If we
+        # have a prior entry for this local_id at a different tile, drop
+        # the stale one so the seen_interactables map keeps exactly one
+        # entry per NPC -- otherwise patrolling NPCs would accumulate a
+        # trail of permanently-blocked tiles.
+        visible_local_ids: dict[int, tuple[int, int]] = {}
+        for inter in interactables:
+            lid = inter.details.get("local_id")
+            if lid:
+                visible_local_ids[lid] = (inter.x, inter.y)
+        if visible_local_ids:
+            stale_keys: list[tuple[int, int]] = []
+            for key, seen in self.seen_interactables.items():
+                if seen.local_id is None:
+                    continue
+                new_pos = visible_local_ids.get(seen.local_id)
+                if new_pos is not None and new_pos != key:
+                    stale_keys.append(key)
+            for key in stale_keys:
+                del self.seen_interactables[key]
+
         for inter in interactables:
             key = (inter.x, inter.y)
+            lid = inter.details.get("local_id")
             if key not in self.seen_interactables:
                 self.seen_interactables[key] = SeenInteractable(
                     x=inter.x,
@@ -200,6 +231,7 @@ class MapMemory:
                     first_seen_step=step,
                     interacted=False,
                     interaction_result=None,
+                    local_id=lid if lid else None,
                 )
             if inter.kind == "warp":
                 dest = inter.details
@@ -281,6 +313,8 @@ class MapMemory:
             # Non-walkable tiles are dead ends for exploration, not frontier.
             if not _is_walkable(tile.collision, tile.behavior):
                 continue
+            if self._is_blocked_by_interactable(tx, ty):
+                continue
             for dx, dy, conn_dir in _NEIGHBOR_DIRS:
                 nx, ny = tx + dx, ty + dy
                 if 0 <= nx < self.width and 0 <= ny < self.height:
@@ -346,20 +380,51 @@ class MapMemory:
             return 0.0
         return (len(self.explored_tiles) / total) * 100.0
 
+    def _is_blocked_by_interactable(self, x: int, y: int) -> bool:
+        """True if a persistent interactable still occupies this tile.
+
+        NPCs / trainers physically occupy their tile; talking to them
+        doesn't remove them, so they stay blocking forever. Item balls,
+        cuttable trees, and breakable rocks block until the agent picks
+        them up / cuts them / smashes them -- ``interacted=True`` flips
+        them passable. Push-boulders are kept conservatively blocking
+        regardless of ``interacted`` (Strength logic is for a later
+        pass; the agent shouldn't assume a tile is open just because
+        it once pushed the boulder off a separate tile).
+
+        The set of blocking kinds matches what the map viewer persists
+        across visibility. Everything else (warps, signs, hidden items,
+        ledges, water, PC) is either a tile the agent walks onto to use
+        or already handled by ``_is_walkable``.
+        """
+        seen = self.seen_interactables.get((x, y))
+        if seen is None:
+            return False
+        if seen.kind in ("npc", "trainer", "push_boulder"):
+            return True
+        if seen.kind in ("item_ball", "cut_tree", "smash_rock"):
+            return not seen.interacted
+        return False
+
     def is_tile_walkable(self, x: int, y: int) -> bool | None:
         """True / False if the tile is known; None if the agent hasn't seen it.
 
-        A tile is walkable iff its collision bits are zero *and* its
+        A tile is walkable iff its collision bits are zero, its
         behavior isn't one of the omnidirectionally-blocking flavours
         (IMPASSABLE_*, ledges with no explicit jump context, deep water
-        without Surf, ...). The behavior check lets us flag tiles the
-        game draws as floor but refuses to let the player step on --
-        collision alone misses those.
+        without Surf, ...), AND no persistent interactable is parked on
+        top of it (NPC, item ball, cuttable tree, ...). The behavior
+        check catches tiles the game draws as floor but refuses to let
+        the player step on; the interactable check catches tiles that
+        are intrinsically floor but currently occupied by a dynamic
+        obstacle the agent has spotted at least once.
         """
         tile = self.explored_tiles.get((x, y))
         if tile is None:
             return None
-        return _is_walkable(tile.collision, tile.behavior)
+        if not _is_walkable(tile.collision, tile.behavior):
+            return False
+        return not self._is_blocked_by_interactable(x, y)
 
     def get_walkable_neighbors(
         self,
@@ -377,7 +442,10 @@ class MapMemory:
 
         ``object_positions`` is the set of tiles currently occupied by
         NPCs / other dynamic object events. Those tiles are excluded
-        from the neighbor set so the path routes around them.
+        from the neighbor set so the path routes around them. Tiles
+        with a persistent (out-of-view) interactable parked on them are
+        excluded too -- the NPC may still be standing there even if
+        the planner can't see it.
         """
         if object_positions is None:
             object_positions = set()
@@ -391,6 +459,8 @@ class MapMemory:
             if not _is_walkable(tile.collision, tile.behavior):
                 continue
             if (nx, ny) in object_positions:
+                continue
+            if self._is_blocked_by_interactable(nx, ny):
                 continue
             # TODO: directional rules go here later:
             #   - ledges: only passable in the jump direction
@@ -617,6 +687,20 @@ class WorldMemory:
                 mem.explored_tiles[(tile.x, tile.y)] = tile
             for s in map_doc.get("seen_interactables", []):
                 inter = SeenInteractable(**s)
+                # Drop legacy object-event entries that predate the
+                # local_id tracking. Without local_id we can't migrate
+                # them when the NPC moves, so reloading would pin every
+                # historical position of every patrolling NPC. NPC,
+                # trainer, item ball, cut tree, smash rock, and push
+                # boulder all come from gObjectEvents and should carry
+                # a local_id; anything without one is stale state from
+                # before the migration logic landed. The agent will
+                # re-discover live positions on its next visit.
+                if (
+                    inter.kind in _DYNAMIC_KINDS
+                    and inter.local_id is None
+                ):
+                    continue
                 mem.seen_interactables[(inter.x, inter.y)] = inter
             for w in map_doc.get("known_warps", []):
                 warp = _warp_from_dict(w)
@@ -662,6 +746,19 @@ _NEIGHBOR_DIRS: tuple[tuple[int, int, int], ...] = (
     (-1, 0, C.CONNECTION_WEST),
     (1,  0, C.CONNECTION_EAST),
 )
+
+
+# Interactable kinds sourced from gObjectEvents. They all carry a
+# stable per-map ``local_id`` from the map header's ObjectEventTemplate
+# array, which ``update_visibility`` uses to migrate the entry when
+# the underlying NPC / item moves or to drop legacy entries that
+# predate local_id tracking. Warps, signs, hidden items, and tile
+# behaviours are NOT in here -- those are static map data keyed by
+# (x, y) and never carry a local_id.
+_DYNAMIC_KINDS: frozenset[str] = frozenset({
+    "npc", "trainer",
+    "item_ball", "cut_tree", "smash_rock", "push_boulder",
+})
 
 
 # Behaviors that block a tile outright, regardless of what the 2-bit

@@ -6,233 +6,13 @@
   "explored_tiles": [
     {
       "x": 0,
-      "y": 0,
-      "metatile_id": 656,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 1,
-      "y": 0,
-      "metatile_id": 645,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 2,
-      "y": 0,
-      "metatile_id": 646,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 3,
-      "y": 0,
-      "metatile_id": 645,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 4,
-      "y": 0,
-      "metatile_id": 647,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 5,
-      "y": 0,
-      "metatile_id": 647,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 6,
-      "y": 0,
-      "metatile_id": 647,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 7,
-      "y": 0,
-      "metatile_id": 658,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 8,
-      "y": 0,
-      "metatile_id": 659,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 9,
-      "y": 0,
-      "metatile_id": 660,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 10,
-      "y": 0,
-      "metatile_id": 657,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 89
-    },
-    {
-      "x": 0,
-      "y": 1,
-      "metatile_id": 664,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 1,
-      "y": 1,
-      "metatile_id": 693,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 2,
-      "y": 1,
-      "metatile_id": 654,
-      "behavior": 152,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 3,
-      "y": 1,
-      "metatile_id": 661,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 4,
-      "y": 1,
-      "metatile_id": 655,
-      "behavior": 159,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 5,
-      "y": 1,
-      "metatile_id": 655,
-      "behavior": 159,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 6,
-      "y": 1,
-      "metatile_id": 655,
-      "behavior": 159,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 7,
-      "y": 1,
-      "metatile_id": 666,
-      "behavior": 130,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 8,
-      "y": 1,
-      "metatile_id": 667,
-      "behavior": 130,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 9,
-      "y": 1,
-      "metatile_id": 668,
-      "behavior": 130,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 10,
-      "y": 1,
-      "metatile_id": 665,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 90
-    },
-    {
-      "x": 0,
       "y": 2,
       "metatile_id": 672,
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -241,8 +21,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -251,8 +31,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -261,8 +41,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -271,8 +51,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -281,8 +61,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -291,8 +71,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -301,8 +81,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -311,8 +91,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -321,8 +101,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -331,8 +111,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 0,
@@ -341,8 +121,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -351,8 +131,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -361,8 +141,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -371,8 +151,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -381,8 +161,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -391,8 +171,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -401,8 +181,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -411,8 +191,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -421,8 +201,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -431,8 +211,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -441,8 +221,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 0,
@@ -451,8 +231,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -461,8 +241,8 @@
       "behavior": 143,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -471,8 +251,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -481,8 +261,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -491,8 +271,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -501,8 +281,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -511,8 +291,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -521,8 +301,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -531,8 +311,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -541,8 +321,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -551,8 +331,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 0,
@@ -561,8 +341,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -571,8 +351,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -581,8 +361,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -591,8 +371,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -601,8 +381,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -611,8 +391,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -621,8 +401,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -631,8 +411,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -641,8 +421,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -651,8 +431,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -661,8 +441,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 0,
@@ -671,8 +451,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -681,8 +461,8 @@
       "behavior": 159,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -691,8 +471,8 @@
       "behavior": 159,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -701,8 +481,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -711,8 +491,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -721,8 +501,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -731,8 +511,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -741,8 +521,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -751,8 +531,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -761,8 +541,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -771,8 +551,8 @@
       "behavior": 130,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 0,
@@ -781,8 +561,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -791,8 +571,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -801,8 +581,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -811,8 +591,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -821,8 +601,8 @@
       "behavior": 101,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -831,8 +611,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -841,8 +621,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -851,8 +631,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -861,8 +641,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -871,8 +651,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -881,8 +661,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 0,
@@ -891,8 +671,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 1,
@@ -901,8 +681,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 2,
@@ -911,8 +691,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 3,
@@ -921,8 +701,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 4,
@@ -931,8 +711,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 5,
@@ -941,8 +721,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 6,
@@ -951,8 +731,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 7,
@@ -961,8 +741,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 8,
@@ -971,8 +751,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 9,
@@ -981,8 +761,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
+      "first_seen_step": 249,
+      "last_seen_step": 288
     },
     {
       "x": 10,
@@ -991,217 +771,240 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 0,
-      "last_seen_step": 93
-    }
-  ],
-  "seen_interactables": [
+      "first_seen_step": 249,
+      "last_seen_step": 288
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "metatile_id": 656,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "metatile_id": 645,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
     {
       "x": 2,
-      "y": 3,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
+      "y": 0,
+      "metatile_id": 646,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "metatile_id": 645,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
     },
     {
       "x": 7,
-      "y": 3,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
+      "y": 0,
+      "metatile_id": 658,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "metatile_id": 659,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
     },
     {
       "x": 9,
-      "y": 6,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
+      "y": 0,
+      "metatile_id": 660,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
     },
+    {
+      "x": 10,
+      "y": 0,
+      "metatile_id": 657,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "metatile_id": 664,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "metatile_id": 693,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "metatile_id": 654,
+      "behavior": 152,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "metatile_id": 661,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "metatile_id": 655,
+      "behavior": 159,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "metatile_id": 666,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "metatile_id": 667,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "metatile_id": 668,
+      "behavior": 130,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "metatile_id": 665,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 251,
+      "last_seen_step": 284
+    }
+  ],
+  "seen_interactables": [
     {
       "x": 4,
       "y": 7,
       "kind": "warp",
       "label": "Warp -> (3, 1)",
-      "first_seen_step": 0,
+      "first_seen_step": 249,
       "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 1,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 1,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 1,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 3,
-      "y": 3,
-      "kind": "shop_counter",
-      "label": "Mart Shop Counter",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 4,
-      "kind": "shop_counter",
-      "label": "Mart Shop Counter",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 4,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 4,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 4,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 5,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 5,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 5,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 6,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 6,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 6,
-      "kind": "pokemart_shelf",
-      "label": "PokeMart Shelf",
-      "first_seen_step": 0,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 5,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 3,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 2,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 4,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 6,
-      "y": 2,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 7,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 6,
-      "y": 3,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 10,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 4,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 81,
-      "interacted": false,
-      "interaction_result": null
+      "interaction_result": null,
+      "local_id": null
     }
   ],
   "known_warps": [

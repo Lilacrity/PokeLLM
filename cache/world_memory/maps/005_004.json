@@ -11,8 +11,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -21,8 +21,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -31,8 +31,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -41,8 +41,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -51,8 +51,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -61,8 +61,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -71,8 +71,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -81,8 +81,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -91,8 +91,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -101,8 +101,8 @@
       "behavior": 128,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -111,8 +111,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -121,8 +121,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -131,8 +131,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -141,8 +141,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -151,8 +151,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -161,8 +161,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -171,8 +171,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -181,8 +181,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -191,8 +191,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -201,8 +201,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -211,8 +211,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -221,8 +221,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -231,8 +231,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -241,8 +241,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -251,8 +251,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -261,8 +261,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -271,8 +271,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -281,8 +281,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -291,8 +291,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -301,8 +301,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -311,8 +311,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -321,8 +321,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -331,8 +331,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -341,8 +341,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -351,8 +351,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -361,8 +361,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -371,8 +371,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -381,8 +381,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -391,8 +391,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -401,8 +401,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -411,8 +411,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -421,8 +421,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -431,8 +431,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -441,8 +441,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -451,8 +451,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -461,8 +461,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -471,8 +471,8 @@
       "behavior": 106,
       "collision": 0,
       "elevation": 4,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -481,8 +481,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 4,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -491,8 +491,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -501,8 +501,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -511,8 +511,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -521,8 +521,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -531,8 +531,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -541,8 +541,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -551,8 +551,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -561,8 +561,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -571,8 +571,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -581,8 +581,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -591,8 +591,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -601,8 +601,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -611,8 +611,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -621,8 +621,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -631,8 +631,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -641,8 +641,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -651,8 +651,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -661,8 +661,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -671,8 +671,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -681,8 +681,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -691,8 +691,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -701,8 +701,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -711,8 +711,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -721,8 +721,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -731,8 +731,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -741,8 +741,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -751,8 +751,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -761,8 +761,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -771,8 +771,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -781,8 +781,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -791,8 +791,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -801,8 +801,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -811,8 +811,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -821,8 +821,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -831,8 +831,8 @@
       "behavior": 101,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -841,8 +841,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -851,8 +851,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -861,8 +861,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -871,8 +871,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -881,8 +881,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -891,8 +891,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -901,8 +901,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -911,8 +911,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 1,
@@ -921,8 +921,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 2,
@@ -931,8 +931,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 3,
@@ -941,8 +941,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 4,
@@ -951,8 +951,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 5,
@@ -961,8 +961,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 6,
@@ -971,8 +971,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 7,
@@ -981,8 +981,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 8,
@@ -991,8 +991,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 9,
@@ -1001,8 +1001,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 10,
@@ -1011,8 +1011,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 11,
@@ -1021,8 +1021,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 12,
@@ -1031,8 +1031,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 13,
@@ -1041,8 +1041,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 14,
@@ -1051,308 +1051,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 36,
-      "last_seen_step": 44
-    },
-    {
-      "x": 0,
-      "y": 2,
-      "metatile_id": 688,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 1,
-      "y": 2,
-      "metatile_id": 660,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 2,
-      "y": 2,
-      "metatile_id": 717,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 3,
-      "y": 2,
-      "metatile_id": 718,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 4,
-      "y": 2,
-      "metatile_id": 689,
-      "behavior": 128,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 5,
-      "y": 2,
-      "metatile_id": 690,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 6,
-      "y": 2,
-      "metatile_id": 691,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 7,
-      "y": 2,
-      "metatile_id": 656,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 8,
-      "y": 2,
-      "metatile_id": 867,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 9,
-      "y": 2,
-      "metatile_id": 692,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 10,
-      "y": 2,
-      "metatile_id": 693,
-      "behavior": 128,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 11,
-      "y": 2,
-      "metatile_id": 661,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 12,
-      "y": 2,
-      "metatile_id": 710,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 13,
-      "y": 2,
-      "metatile_id": 695,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 14,
-      "y": 2,
-      "metatile_id": 694,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 38,
-      "last_seen_step": 41
-    },
-    {
-      "x": 0,
-      "y": 0,
-      "metatile_id": 672,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 1,
-      "y": 0,
-      "metatile_id": 723,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 2,
-      "y": 0,
-      "metatile_id": 713,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 3,
-      "y": 0,
-      "metatile_id": 714,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 4,
-      "y": 0,
-      "metatile_id": 644,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 5,
-      "y": 0,
-      "metatile_id": 644,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 6,
-      "y": 0,
-      "metatile_id": 644,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 7,
-      "y": 0,
-      "metatile_id": 646,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 8,
-      "y": 0,
-      "metatile_id": 647,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 9,
-      "y": 0,
-      "metatile_id": 644,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 10,
-      "y": 0,
-      "metatile_id": 644,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 11,
-      "y": 0,
-      "metatile_id": 645,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 12,
-      "y": 0,
-      "metatile_id": 662,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 13,
-      "y": 0,
-      "metatile_id": 663,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
-    },
-    {
-      "x": 14,
-      "y": 0,
-      "metatile_id": 678,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 40
+      "first_seen_step": 177,
+      "last_seen_step": 208
     },
     {
       "x": 0,
@@ -1361,8 +1061,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 1,
@@ -1371,8 +1071,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 2,
@@ -1381,8 +1081,8 @@
       "behavior": 129,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 3,
@@ -1391,8 +1091,8 @@
       "behavior": 129,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 4,
@@ -1401,8 +1101,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 5,
@@ -1411,8 +1111,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 6,
@@ -1421,8 +1121,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 7,
@@ -1431,8 +1131,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 8,
@@ -1441,8 +1141,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 9,
@@ -1451,8 +1151,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 10,
@@ -1461,8 +1161,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 11,
@@ -1471,8 +1171,8 @@
       "behavior": 131,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 12,
@@ -1481,8 +1181,8 @@
       "behavior": 133,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 13,
@@ -1491,8 +1191,8 @@
       "behavior": 133,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
       "x": 14,
@@ -1501,667 +1201,340 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 39,
-      "last_seen_step": 41
-    }
-  ],
-  "seen_interactables": [
-    {
-      "x": 12,
-      "y": 5,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
+      "first_seen_step": 180,
+      "last_seen_step": 203
     },
     {
-      "x": 4,
-      "y": 7,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
+      "x": 0,
+      "y": 2,
+      "metatile_id": 688,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "metatile_id": 660,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
     },
     {
       "x": 2,
-      "y": 3,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
+      "y": 2,
+      "metatile_id": 717,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
     },
+    {
+      "x": 3,
+      "y": 2,
+      "metatile_id": 718,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "metatile_id": 689,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "metatile_id": 690,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "metatile_id": 691,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "metatile_id": 656,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "metatile_id": 867,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "metatile_id": 692,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "metatile_id": 693,
+      "behavior": 128,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "metatile_id": 661,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 12,
+      "y": 2,
+      "metatile_id": 710,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "metatile_id": 695,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 14,
+      "y": 2,
+      "metatile_id": 694,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 180,
+      "last_seen_step": 204
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "metatile_id": 672,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "metatile_id": 723,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "metatile_id": 713,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "metatile_id": 714,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "metatile_id": 646,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "metatile_id": 647,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "metatile_id": 644,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "metatile_id": 645,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "metatile_id": 662,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "metatile_id": 663,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "metatile_id": 678,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 181,
+      "last_seen_step": 203
+    }
+  ],
+  "seen_interactables": [
     {
       "x": 7,
       "y": 8,
       "kind": "warp",
       "label": "Warp -> (3, 1)",
-      "first_seen_step": 36,
+      "first_seen_step": 177,
       "interacted": false,
-      "interaction_result": null
+      "interaction_result": null,
+      "local_id": null
     },
     {
       "x": 1,
       "y": 6,
       "kind": "warp",
       "label": "Warp -> (5, 5)",
-      "first_seen_step": 36,
+      "first_seen_step": 177,
       "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 3,
-      "kind": "heal_counter",
-      "label": "PokeCenter Heal Counter",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 0,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 1,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 3,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 4,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 5,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 6,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 11,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 12,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 13,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 14,
-      "y": 10,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 0,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 1,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 3,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 4,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 5,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 6,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 11,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 12,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 13,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 14,
-      "y": 11,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 0,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 1,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 3,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 4,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 5,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 6,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 11,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 12,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 13,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 14,
-      "y": 12,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 0,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 1,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 3,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 4,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 5,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 6,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 8,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 9,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 10,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 11,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 12,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 13,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 14,
-      "y": 13,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 36,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 7,
-      "y": 2,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 38,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 1,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 39,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 3,
-      "y": 1,
-      "kind": "bookshelf",
-      "label": "Bookshelf",
-      "first_seen_step": 39,
-      "interacted": false,
-      "interaction_result": null
+      "interaction_result": null,
+      "local_id": null
     },
     {
       "x": 11,
       "y": 1,
       "kind": "pc",
       "label": "PC",
-      "first_seen_step": 39,
+      "first_seen_step": 180,
       "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 12,
-      "y": 1,
-      "kind": "region_map",
-      "label": "Region Map",
-      "first_seen_step": 39,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 13,
-      "y": 1,
-      "kind": "region_map",
-      "label": "Region Map",
-      "first_seen_step": 39,
-      "interacted": false,
-      "interaction_result": null
-    },
-    {
-      "x": 2,
-      "y": 4,
-      "kind": "npc",
-      "label": "NPC",
-      "first_seen_step": 41,
-      "interacted": false,
-      "interaction_result": null
+      "interaction_result": null,
+      "local_id": null
     }
   ],
   "known_warps": [

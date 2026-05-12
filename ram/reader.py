@@ -181,32 +181,63 @@ def _classify_object_event(graphics_id: int, trainer_type: int) -> tuple[str, st
     return "npc", "NPC"
 
 
-# Metatile behaviours that the player can "press A against" from an adjacent
-# tile. These aren't ObjectEvents -- they're baked into the tileset, so they
-# only surface when you scan the metatile grid. The canonical FRLG examples
-# are the PokeCenter healing counter (0x80) and the in-room PC (0x83) --
-# both the user's main motivation for adding this pass.
+# Metatile behaviours surfaced as interactables. Deliberately narrow:
+# only tiles that change how the planner *navigates* (ledges, water) or
+# are the tile-baked PC terminal. Everything else the player can "press
+# A against" -- counters, shelves, TVs, signposts, household furniture --
+# is either redundant with an adjacent NPC ObjectEvent (the engine fires
+# the NPC script through MB_COUNTER) or pure flavour text. Those tiles
+# stay impassable via their collision bit but don't appear as
+# interactables; the NPC behind the counter is the real interactable
+# and shows up via the gObjectEvents pass.
 _INTERACTABLE_TILE_BEHAVIORS: dict[int, tuple[str, str]] = {
-    int(C.MetatileBehavior.COUNTER):             ("counter",   "Counter (heal / shop)"),
-    int(C.MetatileBehavior.BOOKSHELF):           ("bookshelf", "Bookshelf"),
-    int(C.MetatileBehavior.POKEMART_SHELF):      ("pokemart_shelf", "PokeMart Shelf"),
-    int(C.MetatileBehavior.PC):                  ("pc",        "PC"),
-    int(C.MetatileBehavior.SIGNPOST):            ("signpost",  "Signpost"),
-    int(C.MetatileBehavior.REGION_MAP):          ("region_map", "Region Map"),
-    int(C.MetatileBehavior.TELEVISION):          ("television", "Television"),
-    # Building signs (POKEMON_CENTER_SIGN / POKEMART_SIGN): functionally
-    # identical to any other readable sign -- you press A and a dialogue
-    # fires. We classify them under the generic ``sign`` kind so they
-    # share the renderer's "sign" treatment (cyan dot, no special base
-    # colour). The descriptive label still makes it clear which building
-    # the sign belongs to.
-    int(C.MetatileBehavior.POKEMON_CENTER_SIGN): ("sign",      "Pokemon Center Sign"),
-    int(C.MetatileBehavior.POKEMART_SIGN):       ("sign",      "PokeMart Sign"),
+    # One-way ledge jumps. The agent needs to see these to understand
+    # why it can't go back the way it just came. Direction goes into
+    # ``details["direction"]`` via _LEDGE_DIRECTIONS below.
+    int(C.MetatileBehavior.JUMP_NORTH): ("ledge", "Ledge (North)"),
+    int(C.MetatileBehavior.JUMP_SOUTH): ("ledge", "Ledge (South)"),
+    int(C.MetatileBehavior.JUMP_EAST):  ("ledge", "Ledge (East)"),
+    int(C.MetatileBehavior.JUMP_WEST):  ("ledge", "Ledge (West)"),
+    # PC terminal in the back of every PokeCenter -- a directly
+    # interactable tile (not an NPC).
+    int(C.MetatileBehavior.PC):         ("pc",    "PC"),
+    # Building-front signs (PokeCenter, PokeMart, Indigo Plateau) and
+    # the wooden field signposts. These are tileset-baked (not
+    # BgEvents) but functionally identical to any other readable sign:
+    # press A from the tile in front and a dialogue fires. Classified
+    # under the same ``sign`` kind as BgEvent signs so the renderer
+    # treats them identically (cyan dot, persists when off-screen).
+    int(C.MetatileBehavior.SIGNPOST):              ("sign", "Signpost"),
+    int(C.MetatileBehavior.POKEMON_CENTER_SIGN):   ("sign", "Pokemon Center Sign"),
+    int(C.MetatileBehavior.POKEMART_SIGN):         ("sign", "PokeMart Sign"),
+    int(C.MetatileBehavior.INDIGO_PLATEAU_SIGN_1): ("sign", "Indigo Plateau Sign"),
+    int(C.MetatileBehavior.INDIGO_PLATEAU_SIGN_2): ("sign", "Indigo Plateau Sign"),
+}
+# Surfable water -- the authoritative set lives in C.WATER_BEHAVIORS
+# (mirrors pret/src/metatile_behavior.c sBehaviorSurfable[]). Every
+# tile in that set surfaces as kind="water" so the agent knows Surf is
+# required to cross. WATERFALL keeps its descriptive label since it
+# additionally requires the Waterfall HM.
+for _water_beh in C.WATER_BEHAVIORS:
+    _INTERACTABLE_TILE_BEHAVIORS[int(_water_beh)] = ("water", "Water")
+_INTERACTABLE_TILE_BEHAVIORS[int(C.MetatileBehavior.WATERFALL)] = ("water", "Waterfall")
+
+_LEDGE_DIRECTIONS: dict[int, str] = {
+    int(C.MetatileBehavior.JUMP_NORTH): "north",
+    int(C.MetatileBehavior.JUMP_SOUTH): "south",
+    int(C.MetatileBehavior.JUMP_EAST):  "east",
+    int(C.MetatileBehavior.JUMP_WEST):  "west",
 }
 
 
 def _classify_tile_behavior(behavior: int) -> tuple[str, str] | None:
-    """Return (kind, label) for an A-pressable tile behaviour, or None."""
+    """Return (kind, label) for a navigation-relevant tile behaviour, or None.
+
+    Returns ``None`` for counters / shelves / furniture -- those are
+    intentionally invisible to the interactables system. They act as
+    walls via their collision bit, and the NPC behind them (if any) is
+    the actual interactable, surfaced through the ObjectEvent pass.
+    """
     return _INTERACTABLE_TILE_BEHAVIORS.get(behavior)
 
 
@@ -1463,21 +1494,28 @@ class RamReader:
           * Active object events (NPCs, item balls, and the FRLG
             HM-obstacle sprites -- cuttable tree, smashable rock,
             pushable boulder -- which the engine models as ObjectEvents
-            rather than metatile behaviours).
+            rather than metatile behaviours). NPCs hiding behind a
+            counter still surface through this pass at their own tile;
+            the planner is responsible for routing the agent to the
+            adjacent counter tile (one step in the direction the NPC is
+            facing) when A* eventually wires that up.
           * Map-header BgEvents (signs, hidden items).
           * Map-header WarpEvents (doors, stairs, cave mouths), collapsed
             to one representative tile per destination -- FRLG models
             every door as a 2-3 tile strip where each tile points at the
             same warp.
-          * Metatile behaviours that press-A triggers, like the Pokemon
-            Center healing counter (COUNTER = 0x80) and in-room PC
-            (PC = 0x83). These are tileset-baked, so they only surface
-            when we actually scan the grid.
+          * Navigation-relevant tile behaviours: directional ledges
+            (one-way jumps), surfable water (Surf required to cross),
+            and the PC terminal. Counters / shelves / furniture are
+            deliberately excluded -- they're walls with no extra
+            information beyond what the adjacent NPC (if any) already
+            carries.
 
-        The visible window is a 15x10 tile box centred on the player --
-        matching the roughly-visible region on a GBA screen. Pass
-        ``player_x`` / ``player_y`` to skip the SaveBlock1 re-read when
-        the caller already has them.
+        The visible window is a 15x11 tile box centred on the player --
+        roughly the GBA screen plus one extra row above so the agent
+        picks up tall interactables (e.g. the PC at the back wall of a
+        Pokecenter). Pass ``player_x`` / ``player_y`` to skip the
+        SaveBlock1 re-read when the caller already has them.
         """
         if player_x is None or player_y is None:
             st = self.read_player_state()
@@ -1499,37 +1537,12 @@ class RamReader:
 
         out: list[Interactable] = []
 
-        # Find the counter NPC(s) on the full active object event list,
-        # NOT just the visible ones. The counter strip near the NPC has
-        # many COUNTER metatiles, but only the ones the player can stand
-        # facing directly are reachable -- the player can't walk onto a
-        # counter tile, they press A from the floor tile in front of the
-        # NPC. Counter NPCs can sit on any side of the strip (Mart
-        # clerks often have the counter to their east or west, gym /
-        # quiz-show staff are similar), so we collect every COUNTER tile
-        # 4-adjacent to a Nurse/Clerk and treat each as interactable.
-        # Multiple Nurses/Clerks per map are allowed; gather their full
-        # neighbour sets.
-        all_slots = self.read_object_events()
-        nurse_counter_xys: set[tuple[int, int]] = set()
-        clerk_counter_xys: set[tuple[int, int]] = set()
-        _CARDINAL_DELTAS = ((0, -1), (0, 1), (-1, 0), (1, 0))
-        for slot in all_slots:
-            if slot.is_player or slot.invisible:
-                continue
-            if slot.graphics_id == C.OBJ_EVENT_GFX_NURSE:
-                target = nurse_counter_xys
-            elif slot.graphics_id == C.OBJ_EVENT_GFX_CLERK:
-                target = clerk_counter_xys
-            else:
-                continue
-            for dx, dy in _CARDINAL_DELTAS:
-                target.add((slot.x + dx, slot.y + dy))
-
         # Object events: skip the player (slot 0 / is_player) and anything
         # off screen or invisible. gObjectEvents stores coords in
         # border-included space, but read_object_events already subtracts
         # MAP_OFFSET so slot.x/slot.y are in logical space.
+        all_slots = self.read_object_events()
+
         for slot in all_slots:
             if slot.is_player or slot.invisible or slot.off_screen:
                 continue
@@ -1629,18 +1642,16 @@ class RamReader:
                     )
                 )
 
-        # Tile-behaviour sweep: counter, PC, bookshelf, signposts, etc.
-        # All three inputs (grid, behavior lookup) come from caches that
-        # were populated on map entry, so this sweep is pure Python with
-        # zero HTTP. Skip silently if we can't get at the grid (e.g.
-        # pre-overworld).
+        # Tile-behaviour sweep: ledges, surfable water, PC. All inputs
+        # (grid, behavior lookup) come from caches populated on map
+        # entry, so this sweep is pure Python with zero HTTP. Skip
+        # silently if we can't get at the grid (e.g. pre-overworld).
         try:
             map_grid = self.read_map_grid_cached()
         except Exception:  # noqa: BLE001
             map_grid = None
         if map_grid is not None:
             xsize, ysize, grid = map_grid
-            counter_value = int(C.MetatileBehavior.COUNTER)
             for ly in range(min_y, max_y + 1):
                 for lx in range(min_x, max_x + 1):
                     gx = lx + C.MAP_OFFSET
@@ -1648,6 +1659,12 @@ class RamReader:
                     if not (0 <= gx < xsize and 0 <= gy < ysize):
                         continue
                     mid, _col, _ele = self.tile_cell_at(grid, xsize, gx, gy)
+                    # Border tiles outside the playable area carry the
+                    # MAPGRID_UNDEFINED sentinel (0x3FF). That id is past
+                    # the secondary attribute array, so the behaviour
+                    # lookup reads garbage -- skip them.
+                    if mid == C.MAPGRID_UNDEFINED:
+                        continue
                     try:
                         behavior = self.get_metatile_behavior_cached(mid)
                     except Exception:  # noqa: BLE001
@@ -1656,31 +1673,20 @@ class RamReader:
                     if tile_entry is None:
                         continue
                     kind, label = tile_entry
-                    # Counter tiles (0x80): emit only the ones the player
-                    # can actually press A on -- the COUNTER tiles that
-                    # sit 4-adjacent to a Nurse/Clerk NPC. Decorative
-                    # counter tiles further down the strip are unreachable
-                    # (the NPC isn't behind them) and would just clutter
-                    # the agent's interactable list.
-                    if behavior == counter_value:
-                        if (lx, ly) in nurse_counter_xys:
-                            kind = "heal_counter"
-                            label = "PokeCenter Heal Counter"
-                        elif (lx, ly) in clerk_counter_xys:
-                            kind = "shop_counter"
-                            label = "Mart Shop Counter"
-                        else:
-                            continue
+                    details: dict = {
+                        "metatile_id": mid,
+                        "behavior": behavior,
+                    }
+                    ledge_dir = _LEDGE_DIRECTIONS.get(behavior)
+                    if ledge_dir is not None:
+                        details["direction"] = ledge_dir
                     out.append(
                         Interactable(
                             x=lx,
                             y=ly,
                             kind=kind,
                             label=label,
-                            details={
-                                "metatile_id": mid,
-                                "behavior": behavior,
-                            },
+                            details=details,
                         )
                     )
 

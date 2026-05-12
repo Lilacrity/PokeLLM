@@ -244,8 +244,18 @@ def print_interactables(reader: RamReader) -> None:
                 f"{it.details['dest_map_num']}) "
                 f"warp#{it.details['dest_warp_id']}"
             )
-        elif it.kind in ("sign", "hidden_item", "secret_base"):
+        elif "data" in it.details:
+            # BgEvent-sourced sign / hidden item / secret base: stash a
+            # ROM script pointer or packed item word.
             extras.append(f"data={it.details['data']:#010x}")
+        elif "behavior" in it.details:
+            # Tile-behaviour-sourced interactable (counter, PC,
+            # bookshelf, building sign, etc.) -- no script pointer, just
+            # the metatile id and behaviour byte.
+            extras.append(
+                f"mid={it.details['metatile_id']:#05x} "
+                f"beh={it.details['behavior']:#04x}"
+            )
         elif "graphics_id" in it.details:
             extras.append(f"gfx={it.details['graphics_id']}")
             if it.details.get("trainer_type"):

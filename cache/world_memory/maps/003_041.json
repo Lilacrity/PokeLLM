@@ -5,14 +5,24 @@
   "height": 24,
   "explored_tiles": [
     {
+      "x": 39,
+      "y": 3,
+      "metatile_id": 176,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 373
+    },
+    {
       "x": 40,
       "y": 3,
       "metatile_id": 135,
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 41,
@@ -21,8 +31,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 42,
@@ -31,8 +41,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 43,
@@ -41,8 +51,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 44,
@@ -51,8 +61,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 45,
@@ -61,8 +71,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 46,
@@ -71,8 +81,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
     },
     {
       "x": 47,
@@ -81,8 +91,18 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 373
+    },
+    {
+      "x": 39,
+      "y": 4,
+      "metatile_id": 356,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 40,
@@ -91,8 +111,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 41,
@@ -101,8 +121,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 42,
@@ -111,8 +131,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 43,
@@ -121,8 +141,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 44,
@@ -131,8 +151,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 45,
@@ -141,8 +161,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 46,
@@ -151,8 +171,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 47,
@@ -161,8 +181,18 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 5,
+      "metatile_id": 364,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 40,
@@ -171,8 +201,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 41,
@@ -181,8 +211,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 42,
@@ -191,8 +221,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 43,
@@ -201,8 +231,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 44,
@@ -211,8 +241,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 45,
@@ -221,8 +251,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 46,
@@ -231,8 +261,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 47,
@@ -241,798 +271,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 6,
-      "metatile_id": 30,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 6,
-      "metatile_id": 31,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 6,
-      "metatile_id": 9,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 6,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 6,
-      "metatile_id": 9,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 6,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 6,
-      "metatile_id": 9,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 6,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 7,
-      "metatile_id": 22,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 7,
-      "metatile_id": 23,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 7,
-      "metatile_id": 17,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 7,
-      "metatile_id": 211,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 7,
-      "metatile_id": 212,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 7,
-      "metatile_id": 212,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 7,
-      "metatile_id": 212,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 7,
-      "metatile_id": 212,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 8,
-      "metatile_id": 30,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 8,
-      "metatile_id": 31,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 8,
-      "metatile_id": 9,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 8,
-      "metatile_id": 219,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 8,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 8,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 8,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 8,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 9,
-      "metatile_id": 22,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 9,
-      "metatile_id": 23,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 9,
-      "metatile_id": 17,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 9,
-      "metatile_id": 219,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 9,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 9,
-      "metatile_id": 261,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 9,
-      "metatile_id": 228,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 9,
-      "metatile_id": 228,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 10,
-      "metatile_id": 30,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 10,
-      "metatile_id": 31,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 10,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 10,
-      "metatile_id": 219,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 10,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 10,
-      "metatile_id": 221,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 10,
-      "metatile_id": 104,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 10,
-      "metatile_id": 105,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 11,
-      "metatile_id": 22,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 11,
-      "metatile_id": 23,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 11,
-      "metatile_id": 16,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 11,
-      "metatile_id": 219,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 11,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 11,
-      "metatile_id": 221,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 11,
-      "metatile_id": 112,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 11,
-      "metatile_id": 113,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 12,
-      "metatile_id": 30,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 12,
-      "metatile_id": 31,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 12,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 12,
-      "metatile_id": 219,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 12,
-      "metatile_id": 220,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 12,
-      "metatile_id": 221,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 12,
-      "metatile_id": 112,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 12,
-      "metatile_id": 113,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 40,
-      "y": 13,
-      "metatile_id": 38,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 41,
-      "y": 13,
-      "metatile_id": 39,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 42,
-      "y": 13,
-      "metatile_id": 16,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 43,
-      "y": 13,
-      "metatile_id": 227,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 44,
-      "y": 13,
-      "metatile_id": 228,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 45,
-      "y": 13,
-      "metatile_id": 229,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 46,
-      "y": 13,
-      "metatile_id": 112,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 47,
-      "y": 13,
-      "metatile_id": 113,
-      "behavior": 0,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 123,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 3,
-      "metatile_id": 135,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 37,
-      "y": 3,
-      "metatile_id": 177,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 38,
-      "y": 3,
-      "metatile_id": 9,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 3,
-      "metatile_id": 176,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 4,
-      "metatile_id": 355,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 37,
-      "y": 4,
-      "metatile_id": 355,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 38,
-      "y": 4,
-      "metatile_id": 355,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 4,
-      "metatile_id": 356,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 5,
-      "metatile_id": 363,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 37,
-      "y": 5,
-      "metatile_id": 363,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 38,
-      "y": 5,
-      "metatile_id": 363,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 5,
-      "metatile_id": 364,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 6,
-      "metatile_id": 371,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 37,
-      "y": 6,
-      "metatile_id": 371,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 38,
-      "y": 6,
-      "metatile_id": 371,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 39,
@@ -1041,38 +281,88 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
-      "x": 36,
-      "y": 7,
-      "metatile_id": 8,
+      "x": 40,
+      "y": 6,
+      "metatile_id": 30,
       "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
-      "x": 37,
-      "y": 7,
+      "x": 41,
+      "y": 6,
+      "metatile_id": 31,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 6,
       "metatile_id": 9,
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
-      "x": 38,
-      "y": 7,
+      "x": 43,
+      "y": 6,
       "metatile_id": 8,
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 6,
+      "metatile_id": 9,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 6,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 6,
+      "metatile_id": 9,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 6,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
       "x": 39,
@@ -1081,18 +371,708 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
     },
     {
-      "x": 36,
+      "x": 40,
+      "y": 7,
+      "metatile_id": 22,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 7,
+      "metatile_id": 23,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 7,
+      "metatile_id": 17,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 7,
+      "metatile_id": 211,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 7,
+      "metatile_id": 212,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 7,
+      "metatile_id": 212,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 7,
+      "metatile_id": 212,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 7,
+      "metatile_id": 212,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 8,
+      "metatile_id": 177,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 40,
+      "y": 8,
+      "metatile_id": 30,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 8,
+      "metatile_id": 31,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
       "y": 8,
       "metatile_id": 9,
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 8,
+      "metatile_id": 219,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 8,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 8,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 8,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 8,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 9,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 40,
+      "y": 9,
+      "metatile_id": 22,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 9,
+      "metatile_id": 23,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 9,
+      "metatile_id": 17,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 9,
+      "metatile_id": 219,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 9,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 9,
+      "metatile_id": 261,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 9,
+      "metatile_id": 228,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 9,
+      "metatile_id": 228,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 10,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 40,
+      "y": 10,
+      "metatile_id": 30,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 10,
+      "metatile_id": 31,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 10,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 10,
+      "metatile_id": 219,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 10,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 10,
+      "metatile_id": 221,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 10,
+      "metatile_id": 104,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 10,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 11,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 40,
+      "y": 11,
+      "metatile_id": 22,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 11,
+      "metatile_id": 23,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 11,
+      "metatile_id": 16,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 11,
+      "metatile_id": 219,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 11,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 11,
+      "metatile_id": 221,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 11,
+      "metatile_id": 112,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 11,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 12,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 40,
+      "y": 12,
+      "metatile_id": 30,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 12,
+      "metatile_id": 31,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 12,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 12,
+      "metatile_id": 219,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 12,
+      "metatile_id": 220,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 12,
+      "metatile_id": 221,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 12,
+      "metatile_id": 112,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 12,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 39,
+      "y": 13,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 40,
+      "y": 13,
+      "metatile_id": 38,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 41,
+      "y": 13,
+      "metatile_id": 39,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 42,
+      "y": 13,
+      "metatile_id": 16,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 43,
+      "y": 13,
+      "metatile_id": 227,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 44,
+      "y": 13,
+      "metatile_id": 228,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 45,
+      "y": 13,
+      "metatile_id": 229,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 46,
+      "y": 13,
+      "metatile_id": 112,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 47,
+      "y": 13,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 369,
+      "last_seen_step": 395
+    },
+    {
+      "x": 37,
+      "y": 4,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 393
+    },
+    {
+      "x": 38,
+      "y": 4,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 394
+    },
+    {
+      "x": 37,
+      "y": 5,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 393
+    },
+    {
+      "x": 38,
+      "y": 5,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 394
+    },
+    {
+      "x": 37,
+      "y": 6,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 393
+    },
+    {
+      "x": 38,
+      "y": 6,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 394
+    },
+    {
+      "x": 37,
+      "y": 7,
+      "metatile_id": 9,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 393
+    },
+    {
+      "x": 38,
+      "y": 7,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1101,8 +1081,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1111,28 +1091,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 8,
-      "metatile_id": 177,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 9,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1141,8 +1101,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1151,28 +1111,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 9,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 10,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1181,8 +1121,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1191,28 +1131,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 10,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 11,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1221,8 +1141,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1231,28 +1151,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 11,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 12,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1261,8 +1161,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1271,28 +1171,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 12,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 36,
-      "y": 13,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1301,8 +1181,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1311,148 +1191,8 @@
       "behavior": 2,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 39,
-      "y": 13,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 124,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 3,
-      "metatile_id": 135,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 4,
-      "metatile_id": 355,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 5,
-      "metatile_id": 363,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 6,
-      "metatile_id": 371,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 7,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 8,
-      "metatile_id": 177,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 9,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 10,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 11,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 12,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 13,
-      "metatile_id": 13,
-      "behavior": 2,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 125,
-      "last_seen_step": 159
-    },
-    {
-      "x": 35,
-      "y": 14,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
-    },
-    {
-      "x": 36,
-      "y": 14,
-      "metatile_id": 8,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 37,
@@ -1461,8 +1201,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 393
     },
     {
       "x": 38,
@@ -1471,8 +1211,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 394
     },
     {
       "x": 39,
@@ -1481,8 +1221,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 40,
@@ -1491,8 +1231,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 41,
@@ -1501,8 +1241,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 42,
@@ -1511,8 +1251,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 43,
@@ -1521,8 +1261,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 44,
@@ -1531,8 +1271,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 45,
@@ -1541,8 +1281,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 46,
@@ -1551,8 +1291,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 129
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 47,
@@ -1561,28 +1301,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 129
-    },
-    {
-      "x": 35,
-      "y": 15,
-      "metatile_id": 135,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
-    },
-    {
-      "x": 36,
-      "y": 15,
-      "metatile_id": 135,
-      "behavior": 59,
-      "collision": 1,
-      "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 370,
+      "last_seen_step": 395
     },
     {
       "x": 37,
@@ -1591,8 +1311,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 38,
@@ -1601,8 +1321,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 39,
@@ -1611,8 +1331,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 40,
@@ -1621,8 +1341,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 41,
@@ -1631,8 +1351,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 42,
@@ -1641,8 +1361,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 43,
@@ -1651,8 +1371,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 44,
@@ -1661,8 +1381,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 45,
@@ -1671,8 +1391,8 @@
       "behavior": 59,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 46,
@@ -1681,8 +1401,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
       "x": 47,
@@ -1691,28 +1411,28 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 126,
-      "last_seen_step": 128
+      "first_seen_step": 371,
+      "last_seen_step": 392
     },
     {
-      "x": 35,
-      "y": 16,
-      "metatile_id": 355,
+      "x": 37,
+      "y": 3,
+      "metatile_id": 177,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 373,
+      "last_seen_step": 373
+    },
+    {
+      "x": 38,
+      "y": 3,
+      "metatile_id": 9,
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
-    },
-    {
-      "x": 36,
-      "y": 16,
-      "metatile_id": 355,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 373,
+      "last_seen_step": 373
     },
     {
       "x": 37,
@@ -1721,8 +1441,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 38,
@@ -1731,8 +1451,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 39,
@@ -1741,8 +1461,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 40,
@@ -1751,8 +1471,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 41,
@@ -1761,8 +1481,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 42,
@@ -1771,8 +1491,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 43,
@@ -1781,8 +1501,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 44,
@@ -1791,8 +1511,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 45,
@@ -1801,8 +1521,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 46,
@@ -1811,8 +1531,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 127,
-      "last_seen_step": 128
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 47,
@@ -1821,28 +1541,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 127,
-      "last_seen_step": 128
-    },
-    {
-      "x": 35,
-      "y": 17,
-      "metatile_id": 363,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
-    },
-    {
-      "x": 36,
-      "y": 17,
-      "metatile_id": 363,
-      "behavior": 0,
-      "collision": 0,
-      "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 375,
+      "last_seen_step": 391
     },
     {
       "x": 37,
@@ -1851,8 +1551,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 38,
@@ -1861,8 +1561,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 39,
@@ -1871,8 +1571,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 40,
@@ -1881,8 +1581,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 41,
@@ -1891,8 +1591,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 42,
@@ -1901,8 +1601,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 43,
@@ -1911,8 +1611,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 44,
@@ -1921,8 +1621,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 45,
@@ -1931,8 +1631,8 @@
       "behavior": 0,
       "collision": 0,
       "elevation": 3,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 46,
@@ -1941,8 +1641,8 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
     },
     {
       "x": 47,
@@ -1951,11 +1651,1352 @@
       "behavior": 0,
       "collision": 1,
       "elevation": 0,
-      "first_seen_step": 127,
-      "last_seen_step": 127
+      "first_seen_step": 376,
+      "last_seen_step": 390
+    },
+    {
+      "x": 37,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 38,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 39,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 40,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 41,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 42,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 43,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 44,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 45,
+      "y": 18,
+      "metatile_id": 372,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 46,
+      "y": 18,
+      "metatile_id": 112,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 47,
+      "y": 18,
+      "metatile_id": 107,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 377,
+      "last_seen_step": 389
+    },
+    {
+      "x": 35,
+      "y": 8,
+      "metatile_id": 177,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 378,
+      "last_seen_step": 378
+    },
+    {
+      "x": 36,
+      "y": 8,
+      "metatile_id": 9,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 378
+    },
+    {
+      "x": 35,
+      "y": 9,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 9,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 10,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 10,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 11,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 11,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 12,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 12,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 13,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 13,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 14,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 14,
+      "metatile_id": 8,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 35,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 378,
+      "last_seen_step": 388
+    },
+    {
+      "x": 34,
+      "y": 9,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 10,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 11,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 12,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 13,
+      "metatile_id": 13,
+      "behavior": 2,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 14,
+      "metatile_id": 9,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 34,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 386
+    },
+    {
+      "x": 35,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 387
+    },
+    {
+      "x": 36,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 388
+    },
+    {
+      "x": 37,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 38,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 39,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 40,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 41,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 42,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 43,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 44,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 45,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 46,
+      "y": 19,
+      "metatile_id": 187,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 47,
+      "y": 19,
+      "metatile_id": 115,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 379,
+      "last_seen_step": 389
+    },
+    {
+      "x": 33,
+      "y": 9,
+      "metatile_id": 114,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 10,
+      "metatile_id": 114,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 11,
+      "metatile_id": 114,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 12,
+      "metatile_id": 114,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 13,
+      "metatile_id": 114,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 14,
+      "metatile_id": 122,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 33,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 380,
+      "last_seen_step": 386
+    },
+    {
+      "x": 31,
+      "y": 9,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 9,
+      "metatile_id": 117,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 10,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 10,
+      "metatile_id": 117,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 11,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 11,
+      "metatile_id": 117,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 12,
+      "metatile_id": 124,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 12,
+      "metatile_id": 125,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 13,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 13,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 14,
+      "metatile_id": 121,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 14,
+      "metatile_id": 121,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 31,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 384
+    },
+    {
+      "x": 32,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 381,
+      "last_seen_step": 385
+    },
+    {
+      "x": 30,
+      "y": 9,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 10,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 11,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 12,
+      "metatile_id": 124,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 13,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 14,
+      "metatile_id": 121,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 30,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 382,
+      "last_seen_step": 384
+    },
+    {
+      "x": 29,
+      "y": 9,
+      "metatile_id": 115,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 10,
+      "metatile_id": 115,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 11,
+      "metatile_id": 115,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 12,
+      "metatile_id": 123,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 13,
+      "metatile_id": 113,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 14,
+      "metatile_id": 121,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 15,
+      "metatile_id": 135,
+      "behavior": 59,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 16,
+      "metatile_id": 355,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 17,
+      "metatile_id": 363,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 18,
+      "metatile_id": 371,
+      "behavior": 0,
+      "collision": 0,
+      "elevation": 3,
+      "first_seen_step": 383,
+      "last_seen_step": 383
+    },
+    {
+      "x": 29,
+      "y": 19,
+      "metatile_id": 105,
+      "behavior": 0,
+      "collision": 1,
+      "elevation": 0,
+      "first_seen_step": 383,
+      "last_seen_step": 383
     }
   ],
-  "seen_interactables": [],
+  "seen_interactables": [
+    {
+      "x": 39,
+      "y": 3,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 369,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 40,
+      "y": 3,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 369,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 41,
+      "y": 3,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 369,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 39,
+      "y": 8,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 369,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 38,
+      "y": 8,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 370,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 37,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 38,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 41,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 42,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 43,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 44,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 45,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 371,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 37,
+      "y": 3,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 373,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 35,
+      "y": 8,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 378,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 35,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 378,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 36,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 378,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 34,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 379,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 33,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 380,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 31,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 381,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 32,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 381,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 30,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 382,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    },
+    {
+      "x": 29,
+      "y": 15,
+      "kind": "ledge",
+      "label": "Ledge (South)",
+      "first_seen_step": 383,
+      "interacted": false,
+      "interaction_result": null,
+      "local_id": null
+    }
+  ],
   "known_warps": [],
   "connections": [
     {
@@ -1982,7 +3023,7 @@
       ],
       "direction": 4,
       "offset": -10,
-      "used": false
+      "used": true
     }
   ]
 }

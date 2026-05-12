@@ -4,3 +4,7 @@ documentation/pokemon_agent_design.md
 Pokémon 3rd Generation_Pokémon FireRed and LeafGreen_RAM map - Data Crystal.html
 /tests
 .pytest_cache
+/cache
+/documentation
+/pret
+
